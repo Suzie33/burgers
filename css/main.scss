@@ -2,8 +2,14 @@
 @import 'layout/normalize';
 @import 'layout/base';
 
+@import 'blocks/welcome';
 @import 'blocks/header';
 @import 'blocks/nav';
 @import 'blocks/btn';
+@import 'blocks/page-title';
+@import 'blocks/section-title';
+@import 'blocks/side-nav';
+@import 'blocks/arrow-scroll';
+
 @import 'blocks/footer';
-@import 'blocks/welcome';
+

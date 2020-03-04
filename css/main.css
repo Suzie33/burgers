@@ -422,6 +422,30 @@ table {
   border-collapse: collapse;
 }
 
+.welcome {
+  min-height: 100vh;
+  position: relative;
+  background: #101517 url("../../img/welcome-background.jpg") no-repeat center center;
+  background-size: cover;
+  color: #fff;
+}
+
+.welcome__content {
+  display: flex;
+}
+.welcome__content-left, .welcome__content-right {
+  width: 50%;
+}
+.welcome__content-right {
+  padding-left: 11px;
+  padding-bottom: 60px;
+  align-self: flex-end;
+}
+
+.welcome__img {
+  margin-left: auto;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -482,12 +506,51 @@ table {
   font-size: 13px;
 }
 
-.footer {
-  background-color: #101010;
+.page-title {
+  font-family: "Lifehack", sans-serif;
+  font-size: 65px;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  text-transform: lowercase;
 }
 
-.welcome {
-  background: #101517 url("../../img/welcome-background.jpg") no-repeat center center;
-  background-size: cover;
-  color: #fff;
+.section-title {
+  font-family: "Gagalin", sans-serif;
+  font-size: 72px;
+  line-height: 1.18;
+  color: #f9b43b;
+}
+.section-title--margin--s {
+  margin-bottom: 15px;
+}
+
+.side-nav {
+  position: fixed;
+  right: 4.45%;
+  top: 90px;
+}
+
+.side-nav__link:after {
+  content: "";
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.arrow-scroll {
+  position: absolute;
+  bottom: 40px;
+  left: 49.5%;
+}
+
+.arrow-scroll__link {
+  display: block;
+  width: 29px;
+  height: 14px;
+}
+
+.footer {
+  background-color: #101010;
 }

@@ -1,5 +1,26 @@
 .welcome {
+    min-height: 100vh;
+    position: relative;
+
     background: #101517 url('../../img/welcome-background.jpg') no-repeat center center;
     background-size: cover;
     color: #fff;
+}
+
+.welcome__content {
+    display: flex;
+
+    &-left, &-right {
+        width: 50%;
+    } 
+
+    &-right {
+        padding-left: 11px;
+        padding-bottom: 60px;
+        align-self: flex-end;
+    }
+}
+
+.welcome__img {
+    margin-left: auto;
 }
