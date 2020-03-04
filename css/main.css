@@ -360,10 +360,28 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: "Ubuntu", sans-serif;
+  font-weight: 300;
   font-size: 14px;
   line-height: 1.71;
   color: #2f3234;
   background-color: #fff;
+}
+
+.wrapper {
+  overflow: hidden;
+  min-width: 1100px;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper__content {
+  flex-grow: 1;
+}
+
+.container {
+  width: 940px;
+  margin: 0 auto;
 }
 
 *, ::before, ::after {
@@ -372,6 +390,7 @@ body {
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 img {
@@ -401,4 +420,74 @@ button {
 
 table {
   border-collapse: collapse;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 12px;
+}
+
+.nav {
+  margin-left: auto;
+  margin-right: 15px;
+  font-family: "Ubuntu";
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+.nav__list {
+  display: flex;
+}
+
+.nav__item {
+  margin-right: 16px;
+}
+.nav__item:last-child {
+  margin-right: 0;
+}
+
+.nav__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+.nav__item::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  width: 4px;
+  height: 4px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+.nav__item:first-child {
+  padding-left: 0;
+}
+.nav__item:first-child::before {
+  display: none;
+}
+
+.btn {
+  padding: 7px 16px;
+  background-color: #e45028;
+  border-radius: 5px;
+  font-family: "Ubuntu";
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+.footer {
+  background-color: #101010;
+}
+
+.welcome {
+  background: #101517 url("../../img/welcome-background.jpg") no-repeat center center;
+  background-size: cover;
+  color: #fff;
 }
