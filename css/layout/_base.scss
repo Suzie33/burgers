@@ -1,0 +1,53 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    font-family: "Ubuntu", sans-serif;
+    font-size: 14px;
+    line-height: 1.71;
+    color: #2f3234;
+    background-color: #fff;
+}
+
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    font-weight: normal;
+}
+
+button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+table {
+    border-collapse: collapse;
+   }
+
