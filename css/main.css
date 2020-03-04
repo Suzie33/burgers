@@ -436,6 +436,9 @@ table {
 .welcome__content-left, .welcome__content-right {
   width: 50%;
 }
+.welcome__content-left {
+  background: url(../../img/icons/drops.svg) no-repeat right 60px;
+}
 .welcome__content-right {
   padding-left: 11px;
   padding-bottom: 60px;
@@ -505,6 +508,10 @@ table {
   text-transform: uppercase;
   font-size: 13px;
 }
+.btn:hover {
+  background-color: #c1401e;
+  transition: 0.3s;
+}
 
 .page-title {
   font-family: "Lifehack", sans-serif;
@@ -530,13 +537,51 @@ table {
   top: 90px;
 }
 
-.side-nav__link:after {
+.side-nav__item {
+  margin-bottom: 5px;
+}
+.side-nav__item:last-child {
+  margin-bottom: 0;
+}
+
+.side-nav__link {
+  position: relative;
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+.side-nav__link::after {
   content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: block;
   width: 6px;
   height: 6px;
   border-radius: 50%;
   background-color: #fff;
+}
+.side-nav__link::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  opacity: 0;
+}
+.side-nav__link:hover::before {
+  opacity: 1;
+  transition: 0.3s;
+}
+
+.side-nav__link--active::before {
+  opacity: 1;
 }
 
 .arrow-scroll {
