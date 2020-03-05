@@ -25,6 +25,11 @@ html {
   /* 2 */
 }
 
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  font-weight: normal;
+}
+
 /* Sections
    ========================================================================== */
 /**
@@ -407,11 +412,6 @@ li {
   list-style: none;
 }
 
-h1, h2, h3, h4, h5, h6, p {
-  margin: 0;
-  font-weight: normal;
-}
-
 button {
   border: none;
   background: transparent;
@@ -422,8 +422,11 @@ table {
   border-collapse: collapse;
 }
 
-.welcome {
+.section {
   min-height: 100vh;
+}
+
+.welcome {
   position: relative;
   background: #101517 url("../../img/welcome-background.jpg") no-repeat center center;
   background-size: cover;
@@ -530,6 +533,15 @@ table {
 .section-title--margin--s {
   margin-bottom: 15px;
 }
+.section-title--margin--m {
+  margin-bottom: 43px;
+}
+.section-title--color--dark {
+  color: #2f3234;
+}
+.section-title--center {
+  text-align: center;
+}
 
 .side-nav {
   position: fixed;
@@ -594,6 +606,49 @@ table {
   display: block;
   width: 29px;
   height: 14px;
+}
+
+.features {
+  padding: 118px 8px 0px;
+  background: url("../../img/features-background.jpg") no-repeat center center;
+  background-size: cover;
+}
+
+.features__list {
+  display: flex;
+  align-items: baseline;
+}
+
+.features__item {
+  text-align: center;
+  width: calc(100% / 3 - 2.67%);
+  margin-right: 2.67%;
+}
+.features__item:last-child {
+  margin-right: 0;
+}
+
+.features__icon {
+  min-height: 89px;
+  margin-bottom: 25px;
+}
+
+.features__img {
+  margin: 0 auto;
+}
+
+.features__title {
+  margin-bottom: 15px;
+  font-family: "Lifehack";
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 1.17;
+  letter-spacing: -0.025;
+}
+
+.features__decription {
+  font-weight: 300;
+  opacity: 0.8;
 }
 
 .footer {
