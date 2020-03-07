@@ -6,22 +6,29 @@
     color: #fff;
 }
 
-.welcome__content {
+.welcome__container {
     display: flex;
+    flex-direction: column;
+    height: 100%;
+}
 
-    &-left, &-right {
-        width: 50%;
-    } 
+.welcome__content {
+    margin: auto;
+    display: flex;
+}
 
-    &-left {
-        background: url(../../img/icons/drops.svg) no-repeat right 60px;
-    }
+.welcome__picture, .welcome__text {
+    width: 50%;
+} 
 
-    &-right {
-        padding-left: 11px;
-        padding-bottom: 60px;
-        align-self: flex-end;
-    }
+.welcome__picture {
+    background: url(../../img/icons/drops.svg) no-repeat right 60px;
+}
+
+.welcome__text {
+    padding-left: 11px;
+    padding-bottom: 60px;
+    align-self: flex-end;
 }
 
 .welcome__img {

@@ -13,18 +13,16 @@
 }
 
 .nav__item {
+    padding-left: 20px;
     margin-right: 16px;
+
+    position: relative;
+    display: flex;
+    align-items: center;
 
     &:last-child {
         margin-right: 0;
     }
-}
-
-.nav__item {
-    position: relative;
-    display: flex;
-    align-items: center;
-    padding-left: 20px;
 
     &::before {
         content: "";
@@ -34,7 +32,7 @@
 
         width: 4px;
         height: 4px;
-        background-color: #fff;
+        background-color: currentColor;
         border-radius: 50%;
     }
 
@@ -45,4 +43,8 @@
             display: none;
         }
     }
+}
+
+.nav__link:hover {
+    text-decoration: underline;
 }

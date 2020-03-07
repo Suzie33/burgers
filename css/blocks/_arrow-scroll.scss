@@ -1,12 +1,10 @@
 .arrow-scroll {
-    position: absolute;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
+    padding-bottom: 40px;
 }
 
 .arrow-scroll__link {
     display: block;
+    margin: 0 auto;
     width: 29px;
     height: 14px;
 }
