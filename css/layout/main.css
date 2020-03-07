@@ -503,7 +503,7 @@ table {
 }
 
 .btn {
-  padding: 7px 16px;
+  padding: 8px 16px;
   background-color: #e45028;
   border-radius: 5px;
   font-family: "Ubuntu";
@@ -513,6 +513,14 @@ table {
 }
 .btn:hover {
   background-color: #c1401e;
+  transition: 0.3s;
+}
+
+.btn--bc--dark {
+  background-color: #2f3234;
+}
+.btn--bc--dark:hover {
+  background-color: #1f2122;
   transition: 0.3s;
 }
 
@@ -599,7 +607,8 @@ table {
 .arrow-scroll {
   position: absolute;
   bottom: 40px;
-  left: 49.5%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .arrow-scroll__link {
@@ -657,14 +666,52 @@ table {
 }
 
 .reviews__item {
+  position: relative;
   width: calc(100% / 4);
   height: 50vh;
+}
+.reviews__item:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(20, 20, 20, 0.7);
+  opacity: 0;
+}
+.reviews__item:hover::after {
+  opacity: 1;
+  transition: 0.3s;
 }
 
 .reviews__img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.reviews__card {
+  padding: 14.5% 11% 14.5% 7.27%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  color: #fff;
+}
+
+.reviews__title {
+  margin-bottom: 7.27%;
+  font-family: "Gagalin";
+  text-transform: uppercase;
+}
+
+.reviews__text {
+  margin-bottom: 5%;
+  font-weight: 300;
 }
 
 .footer {

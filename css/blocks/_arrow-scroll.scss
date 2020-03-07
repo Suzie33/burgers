@@ -1,7 +1,8 @@
 .arrow-scroll {
     position: absolute;
     bottom: 40px;
-    left: 49.5%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .arrow-scroll__link {
@@ -9,5 +10,4 @@
     width: 29px;
     height: 14px;
 }
-
 

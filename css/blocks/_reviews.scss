@@ -4,12 +4,54 @@
 }
 
 .reviews__item {
+    position: relative;
     width: calc(100% / 4);
     height: 50vh;
+
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+        background-color: rgba(20, 20, 20, 0.7);
+        opacity: 0;
+    }
+
+    &:hover::after {
+        opacity: 1;
+        transition: .3s;
+    }
 }
 
 .reviews__img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.reviews__card {
+    padding: 14.5% 11% 14.5% 7.27%;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+
+    color: #fff;
+}
+
+.reviews__title {
+    margin-bottom: 7.27%;
+    font-family: "Gagalin";
+    text-transform: uppercase;
+}
+
+.reviews__text {
+    margin-bottom: 5%;
+    font-weight: 300;
 }
