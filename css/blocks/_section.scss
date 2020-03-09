@@ -8,20 +8,11 @@
     font-size: 72px;
     line-height: 1.18;
     color: #f9b43b;
+    margin-bottom: 15px;
 
-    &--margin--s {
-        margin-bottom: 15px;
-    }
-
-    &--margin--m {
+    &--features {
         margin-bottom: 43px;
-    }
-
-    &--color--dark {
         color: #2f3234;
-    }
-
-    &--centered {
         text-align: center;
     }
 }

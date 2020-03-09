@@ -438,17 +438,11 @@ table {
   font-size: 72px;
   line-height: 1.18;
   color: #f9b43b;
-}
-.section__title--margin--s {
   margin-bottom: 15px;
 }
-.section__title--margin--m {
+.section__title--features {
   margin-bottom: 43px;
-}
-.section__title--color--dark {
   color: #2f3234;
-}
-.section__title--centered {
   text-align: center;
 }
 
@@ -624,7 +618,7 @@ table {
 }
 
 .arrow-scroll {
-  padding-bottom: 40px;
+  margin-bottom: 40px;
 }
 
 .arrow-scroll__link {
@@ -690,6 +684,7 @@ table {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: grayscale(100%);
 }
 
 .reviews__card {
