@@ -1,0 +1,26 @@
+.team {
+    position: relative;
+    background-color: #545454;
+}
+
+.team__photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.team__description {
+    padding: 90px 98px;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 49%;
+    height: 100%;
+
+    background-color: #2f3234;
+    opacity: .93;
+}
+

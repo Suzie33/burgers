@@ -1,0 +1,42 @@
+.accordeon {
+    color: #fff;
+}
+
+.accordeon__hidden {
+    display: flex;
+}
+
+.accordeon__item-title {
+    font-family: "Gagalin";
+    text-transform: uppercase;
+}
+
+.avatar__avatar {
+    width: 140px;
+}
+
+.accordeon__frame {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.accordeon__avatar-img {
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+}
+
+.accordeon__desc {
+    width: 225px;
+}
+
+.accordeon__subtitle {
+    margin-bottom: 10px;
+
+    font-size: inherit;
+    font-weight: 700;
+}

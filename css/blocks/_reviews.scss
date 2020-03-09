@@ -25,10 +25,9 @@
     transform: scale(0.8);
 }
 
-.reviews__card h3 {
+.reviews__card h4 {
+    @extend .accordeon__item-title;
     margin-bottom: 7.27%;
-    font-family: "Gagalin";
-    text-transform: uppercase;
 }
 
 .reviews__card p {
