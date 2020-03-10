@@ -706,11 +706,49 @@ table {
 
 .accordeon__hidden {
   display: flex;
+  height: 0;
+  overflow: hidden;
+}
+
+.accordeon__item {
+  margin-bottom: 25px;
+}
+.accordeon__item--active .accordeon__hidden {
+  height: 100%;
+}
+.accordeon__item--active .accordeon__item-title, .accordeon__item--active .reviews__card h4, .reviews__card .accordeon__item--active h4 {
+  color: #f9b43b;
+}
+.accordeon__item--active .accordeon__item-title::before, .accordeon__item--active .reviews__card h4::before, .reviews__card .accordeon__item--active h4::before {
+  border-bottom: 6px solid #f9b43b;
+  border-top: none;
 }
 
 .accordeon__item-title, .reviews__card h4 {
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
   font-family: "Gagalin";
   text-transform: uppercase;
+}
+.accordeon__item-title::before, .reviews__card h4::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border: 6px solid #f9b43b;
+  border-bottom: none;
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+.accordeon__item-title:hover, .reviews__card h4:hover {
+  color: #f9b43b;
+  transition: 0.2s;
+  cursor: pointer;
 }
 
 .avatar__avatar {
