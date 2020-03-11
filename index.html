@@ -58,7 +58,9 @@
                     </div>
                     <div class="arrow-scroll">
                         <a href="#" class="arrow-scroll__link">
-                            <img src="img/icons/arrow-scroll.svg" class="arrow-scroll__img" width="29" height="14">
+                            <svg class="arrow-scroll__img" width="29" height="14">
+                                <use xlink:href="img/sprite.svg#arrow-scroll"></use>
+                            </svg>
                         </a>
                     </div>
                 </div>
@@ -70,7 +72,9 @@
                     <ul class="features__list">
                         <li class="features__item">
                             <div class="features__icon">
-                                <img src="img/icons/meat.svg" alt="Свежее мясо" class="features__img">
+                                <svg class="features__img" width="97" height="89">
+                                    <use xlink:href="img/sprite.svg#meat"></use>
+                                </svg>
                             </div>
                             <div class="features__description">
                                 <h3>100% свежее мясо</h3>
@@ -79,7 +83,9 @@
                         </li>
                         <li class="features__item">
                             <div class="features__icon">
-                                <img src="img/icons/hand.svg" alt="Ручная сборка" class="features__img">
+                                <svg class="features__img" width="73" height="85">
+                                    <use xlink:href="img/sprite.svg#hand"></use>
+                                </svg>
                             </div>
                             <div class="features__description">
                                 <h3>Ручная сборка</h3>
@@ -88,7 +94,9 @@
                         </li>
                         <li class="features__item">
                             <div class="features__icon">
-                                <img src="img/icons/natural.svg" alt="Натуральные ингредиенты" class="features__img">
+                                <svg class="features__img" width="88" height="75">
+                                    <use xlink:href="img/sprite.svg#natural"></use>
+                                </svg>
                             </div>
                             <div class="features__description">
                                 <h3>Натуральные ингредиенты</h3>
@@ -98,12 +106,13 @@
                     </ul>
                 </div>
             </section>
+
             <section class="section team">
-                <img src="img/team-background.jpg" alt="Наша Команда" class="team__photo">
+                <img src="img/team-background.jpg" alt="Наша Команда" class="team__background">
                 <div class="team__description">
                     <h2 class="section__title">Команда</h2>
-                    <div class="accordeon">
-                        <div class="accordeon__item">
+                    <ul class="accordeon">
+                        <li class="accordeon__item">
                             <h4 class="accordeon__item-title">Дэниэл Редклиф</h4>
                             <div class="accordeon__hidden">
                                 <div class="avatar__avatar">
@@ -116,8 +125,8 @@
                                     <p class="accordeon__text">С радостью поможет подобрать идеальный бургер и оформить заказ.</p>
                                 </div>
                             </div>
-                        </div>
-                        <div class="accordeon__item accordeon__item--active">
+                        </li>
+                        <li class="accordeon__item accordeon__item--active">
                             <h4 class="accordeon__item-title">Ричард Джеймс</h4>
                             <div class="accordeon__hidden">
                                 <div class="avatar__avatar">
@@ -130,8 +139,8 @@
                                     <p class="accordeon__text">С радостью поможет подобрать идеальный бургер и оформить заказ.</p>
                                 </div>
                             </div>
-                        </div>
-                        <div class="accordeon__item">
+                        </li>
+                        <li class="accordeon__item">
                             <h4 class="accordeon__item-title">Джейк Финн</h4>
                             <div class="accordeon__hidden">
                                 <div class="avatar__avatar">
@@ -144,8 +153,8 @@
                                     <p class="accordeon__text">С радостью поможет подобрать идеальный бургер и оформить заказ.</p>
                                 </div>
                             </div>
-                        </div>
-                        <div class="accordeon__item">
+                        </li>
+                        <li class="accordeon__item">
                             <h4 class="accordeon__item-title">Николай Иванов</h4>
                             <div class="accordeon__hidden">
                                 <div class="avatar__avatar">
@@ -158,9 +167,25 @@
                                     <p class="accordeon__text">С радостью поможет подобрать идеальный бургер и оформить заказ.</p>
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                        </li>
+                    </ul>
                 </div>
+            </section>
+
+            <section class="section menu">
+                <img src="img/menu-background.jpg" alt="Бургер" class="menu__background">
+                <h2 class="section__title section__title--menu">Меню</h2>
+                <ul class="accordeon-menu">
+                    <li class="accordeon-menu__item">
+                        <h3 class="accordeon-menu__title">Для мясоедов</h3>
+                    </li>
+                    <li class="accordeon-menu__item">
+                        <h3 class="accordeon-menu__title">Вегетарианское</h3>
+                    </li>
+                    <li class="accordeon-menu__item">
+                        <h3 class="accordeon-menu__title">Диетическое</h3>
+                    </li>
+                </ul>
             </section>
 
             <section class="section reviews">
@@ -230,6 +255,40 @@
                         </article>
                     </li>
                 </ul>
+            </section>
+
+            <section class="section contacts">
+                <img src="img/map.jpg" alt="Карта" class="contacts__map">
+                <footer class="footer">
+                    <div class="container footer__container">
+                        <address class="contacts__text">
+                            <div class="contacts__address">Санкт-Петербург, ул.Бабушкина, д.12/1, 15
+                            </div>
+                            <a href="tel: 88123771377" class="contacts__tel">
+                                <svg class="contacts__tel-icon" width="12" height="11">
+                                    <use xlink:href="img/sprite.svg#phone"></use>
+                                </svg>
+                                +7 (812) 377-13-77
+                            </a>
+                        </address>
+                        <div class="socials">
+                            <ul class="socials__list">
+                                <li class="socials__item">
+                                    <a href="#" class="socials__link socials__link--img--vk"></a>
+                                </li>
+                                <li class="socials__item">
+                                    <a href="#" class="socials__link socials__link--img--fb"></a>
+                                </li>
+                                <li class="socials__item">
+                                    <a href="#" class="socials__link socials__link--img--inst"></a>
+                                </li>
+                                <li class="socials__item">
+                                    <a href="#" class="socials__link socials__link--img--tw"></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </footer>
             </section>
 
             <div class="side-nav">

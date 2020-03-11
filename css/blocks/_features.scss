@@ -13,7 +13,7 @@
 
 .features__list {
     display: flex;
-    align-items: baseline;
+    align-items: flex-start;
     justify-content: space-between;
 }
 
@@ -23,7 +23,7 @@
 }
 
 .features__icon {
-    min-height: 89px;
+    height: 89px;
     margin-bottom: 25px;
 }
 

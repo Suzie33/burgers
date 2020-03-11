@@ -1,0 +1,18 @@
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    background: #101010 url("../../img/footer-background.jpg") no-repeat;
+    background-size: cover;
+    color: #fff;
+    padding-top: 6px;
+    padding-bottom: 10px;
+}
+
+.footer__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

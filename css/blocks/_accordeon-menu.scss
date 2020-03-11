@@ -1,0 +1,27 @@
+.accordeon-menu {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    height: 100%;
+    display: flex;
+}
+
+.accordeon-menu__item {
+    display: block;
+    height: 100%;
+    // width: 10%;
+    // display: flex;
+    // justify-content: start;
+}
+
+.accordeon-menu__title {
+    font-family: "Gagalin", sans-serif;
+    font-size: 40px;
+    line-height: 1.18;
+    color: #fff;
+    width: 10%;
+
+    writing-mode: vertical-lr;
+    
+}
