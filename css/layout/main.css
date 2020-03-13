@@ -933,27 +933,14 @@ table {
 }
 
 .socials__link {
-  position: relative;
   display: block;
-  width: 23px;
-  height: 20px;
-  background-color: #fff;
-}
-.socials__link::after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  line-height: 0;
 }
 
-.socials__link--img--vk {
-  width: 23px;
-  height: 13px;
+.socials__img {
+  fill: #585858;
 }
-.socials__link--img--vk::after {
-  width: 100%;
-  height: 100%;
-  background: url("../../img/sprite.svg#vk");
+.socials__img:hover {
+  fill: #fff;
+  transition: 0.2s;
 }
