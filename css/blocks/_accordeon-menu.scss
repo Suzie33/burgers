@@ -1,27 +1,75 @@
 .accordeon-menu {
     position: absolute;
-    right: 0;
     top: 0;
-
+    right: 0;
     height: 100%;
+
     display: flex;
+    justify-content: flex-end;
 }
 
 .accordeon-menu__item {
+    display: flex;
+    justify-content: flex-end;
+    height: 100%; 
+
+    &--active {
+        width: 50%;
+    }
+
+    &--active .accordeon-menu__content {
+        display: block;
+        width: 100%;
+        padding: 7.7% 6.5%;
+    }
+
+    &--active .accordeon-menu__text {
+        max-height: 100%;
+        overflow: auto;
+    }
+
+    &--active .accordeon-menu__title {
+        color: #f9b43b;
+    }
+}
+
+.accordeon-menu__trigger {
     display: block;
+    width: 80px;
+    flex-shrink: 0;
     height: 100%;
-    // width: 10%;
-    // display: flex;
-    // justify-content: start;
+    position: relative;
 }
 
 .accordeon-menu__title {
+    position: absolute;
+    left: 50%;
+    top: 93.85%;
+    transform: rotate(-90deg) translateY(-50%);
+    transform-origin: 0 0;
+
     font-family: "Gagalin", sans-serif;
     font-size: 40px;
     line-height: 1.18;
     color: #fff;
-    width: 10%;
+    white-space: nowrap;
+}
 
-    writing-mode: vertical-lr;
-    
+@each $bg in (meat, vegan, diet) {
+    .accordeon-menu__item--#{$bg} .accordeon-menu__trigger {
+        background: #000 url("../../img/menu_#{$bg}_bg.jpg") no-repeat center center;
+        background-size: cover;
+    }
+}
+
+.accordeon-menu__content {
+    padding: 0;
+    height: 100%;
+    width: 0;
+    overflow: hidden;
+    background-color: rgba(47, 50, 52, 0.93);
+}
+
+.accordeon-menu__text {
+    font-weight: 300;
 }
