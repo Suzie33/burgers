@@ -882,6 +882,125 @@ table {
   transition: 0.3s;
 }
 
+.order {
+  background: #161616 url("../../img/form-background.jpg") no-repeat center center;
+  background-size: cover;
+  color: #fff;
+}
+
+.order__form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.order__container {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.order__form-group {
+  width: calc(100% / 2 - 10px);
+  margin-right: 20px;
+}
+.order__form-group:last-child {
+  margin-right: 0;
+}
+
+.order__form-row {
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.order__form-block {
+  flex-grow: 1;
+  margin-right: 20px;
+}
+.order__form-block:last-child {
+  margin-right: 0;
+}
+
+.order__form-name {
+  display: block;
+}
+
+.order__form-input, .order__form-textarea {
+  width: 100%;
+  padding: 8px 21px;
+  color: #2f3234;
+  border: 2px solid transparent;
+  outline: none;
+  border-radius: 5px;
+}
+.order__form-input:focus, .order__form-textarea:focus {
+  border-color: #f9b43b;
+  transition: 0.2s;
+}
+
+.order__form-textarea {
+  height: 110px;
+  resize: none;
+  display: block;
+}
+
+.order__form-radio {
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+}
+.order__form-radio:last-child {
+  margin-right: 0;
+}
+
+.order__form-radio-input {
+  display: none;
+}
+
+.order__form-radio-visible {
+  display: inline-block;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+.order__form-radio-visible::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #FFF;
+}
+.order__form-radio-visible::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #e45028;
+  opacity: 0;
+}
+
+.order__form-radio-input:checked + .order__form-radio-visible::after {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+.order__form-radio-label {
+  display: inline-block;
+}
+
 .contacts {
   position: relative;
 }

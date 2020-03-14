@@ -1,4 +1,4 @@
-$orange:#f9b43b;
+$yellow:#f9b43b;
 
 .accordeon {
     color: #fff;
@@ -18,10 +18,10 @@ $orange:#f9b43b;
     }
 
     &--active .accordeon__item-title {
-        color: $orange;
+        color: $yellow;
 
         &::before {
-            border-bottom: 6px solid $orange;
+            border-bottom: 6px solid $yellow;
             border-top: none;
         }
     }
@@ -44,14 +44,14 @@ $orange:#f9b43b;
         transform: translateY(-50%);
         width: 0;
         height: 0;
-        border: 6px solid $orange;
+        border: 6px solid $yellow;
         border-bottom: none;
         border-left-color: transparent;
         border-right-color: transparent;
     }
 
     &:hover {
-        color: $orange;
+        color: $yellow;
         transition: .2s;
         cursor: pointer;
     }

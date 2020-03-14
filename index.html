@@ -258,8 +258,68 @@
             </section>
 
             <section class="section order">
-                <div class="container">
-                    
+                <div class="container order__container">
+                    <h2 class="section__title">Закажите доставку</h2>
+                    <form action="#" method="POST" class="order__form">
+                        <div class="order__form-group">
+                            <div class="order__form-row">
+                                <label class="order__form-block">
+                                    <span class="order__form-name">Имя</span>
+                                    <input type="text" class="order__form-input">
+                                </label>
+                                <label class="order__form-block">
+                                    <span class="order__form-name">Телефон</span>
+                                    <input type="tel" class="order__form-input">
+                                </label>
+                            </div>
+                            <div class="order__form-row">
+                                <label class="order__form-block">
+                                    <span class="order__form-name">Улица</span>
+                                    <input type="text" class="order__form-input">
+                                </label>
+                            </div>
+                            <div class="order__form-row">
+                                <label class="order__form-block">
+                                    <span class="order__form-name">Дом</span>
+                                    <input type="text" class="order__form-input">
+                                </label>
+                                <label class="order__form-block">
+                                    <span class="order__form-name">Корпус</span>
+                                    <input type="text" class="order__form-input">
+                                </label>
+                                <label class="order__form-block">
+                                    <span class="order__form-name">Квартира</span>
+                                    <input type="text" class="order__form-input">
+                                </label>
+                                <label class="order__form-block">
+                                    <span class="order__form-name">Этаж</span>
+                                    <input type="text" class="order__form-input">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="order__form-group">
+                            <div class="order__form-row">
+                                <label class="order__form-block">
+                                    <span class="order__form-name">Комментарий</span>
+                                    <textarea class="order__form-textarea"></textarea>
+                                </label>
+                            </div>
+                            <div class="order__form-row">
+                                <label class="order__form-radio">
+                                    <input class="order__form-radio-input" type="radio" name="payment-method" value="cash">
+                                    <div class="order__form-radio-visible"></div>
+                                    <span class="order__form-radio-label">Потребуется сдача
+                                    </span>
+                                </label>
+                                <label class="order__form-radio">
+                                    <input class="order__form-radio-input" type="radio" name="payment-method" value="card" checked>
+                                    <div class="order__form-radio-visible"></div>
+                                    <span class="order__form-radio-label">Оплата по карте
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </section>
 
