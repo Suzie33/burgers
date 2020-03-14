@@ -264,35 +264,35 @@
                         <div class="order__form-group">
                             <div class="order__form-row">
                                 <label class="order__form-block">
-                                    <span class="order__form-name">Имя</span>
+                                    <span class="order__form-label">Имя</span>
                                     <input type="text" class="order__form-input">
                                 </label>
                                 <label class="order__form-block">
-                                    <span class="order__form-name">Телефон</span>
+                                    <span class="order__form-label">Телефон</span>
                                     <input type="tel" class="order__form-input">
                                 </label>
                             </div>
                             <div class="order__form-row">
                                 <label class="order__form-block">
-                                    <span class="order__form-name">Улица</span>
+                                    <span class="order__form-label">Улица</span>
                                     <input type="text" class="order__form-input">
                                 </label>
                             </div>
                             <div class="order__form-row">
                                 <label class="order__form-block">
-                                    <span class="order__form-name">Дом</span>
+                                    <span class="order__form-label">Дом</span>
                                     <input type="text" class="order__form-input">
                                 </label>
                                 <label class="order__form-block">
-                                    <span class="order__form-name">Корпус</span>
+                                    <span class="order__form-label">Корпус</span>
                                     <input type="text" class="order__form-input">
                                 </label>
                                 <label class="order__form-block">
-                                    <span class="order__form-name">Квартира</span>
+                                    <span class="order__form-label">Квартира</span>
                                     <input type="text" class="order__form-input">
                                 </label>
                                 <label class="order__form-block">
-                                    <span class="order__form-name">Этаж</span>
+                                    <span class="order__form-label">Этаж</span>
                                     <input type="text" class="order__form-input">
                                 </label>
                             </div>
@@ -300,23 +300,34 @@
                         <div class="order__form-group">
                             <div class="order__form-row">
                                 <label class="order__form-block">
-                                    <span class="order__form-name">Комментарий</span>
+                                    <span class="order__form-label">Комментарий</span>
                                     <textarea class="order__form-textarea"></textarea>
                                 </label>
                             </div>
                             <div class="order__form-row">
-                                <label class="order__form-radio">
-                                    <input class="order__form-radio-input" type="radio" name="payment-method" value="cash">
-                                    <div class="order__form-radio-visible"></div>
-                                    <span class="order__form-radio-label">Потребуется сдача
+                                <label class="order__radio">
+                                    <input class="order__radio-input" type="radio" name="payment-method" value="cash">
+                                    <div class="order__radio-visible"></div>
+                                    <span class="order__radio-label">Потребуется сдача
                                     </span>
                                 </label>
-                                <label class="order__form-radio">
-                                    <input class="order__form-radio-input" type="radio" name="payment-method" value="card" checked>
-                                    <div class="order__form-radio-visible"></div>
-                                    <span class="order__form-radio-label">Оплата по карте
+                                <label class="order__radio">
+                                    <input class="order__radio-input" type="radio" name="payment-method" value="card" checked>
+                                    <div class="order__radio-visible"></div>
+                                    <span class="order__radio-label">Оплата по карте
                                     </span>
                                 </label>
+                            </div>
+                            <div class="order__form-row">
+                                <label class="order__checkbox">
+                                    <input class="order__checkbox-input" type="checkbox" name="toCallBack" checked>
+                                    <div class="order__checkbox-visible"></div>
+                                    <span class="order__checkbox-label">Не перезванивать</span>
+                                </label>
+                            </div>
+                            <div class="order__form-row">
+                                <input class="btn btn--margin-right" type="submit" value="Заказать">
+                                <input class="btn btn--reset" type="reset" value="Очистить">
                             </div>
                         </div>
                     </form>

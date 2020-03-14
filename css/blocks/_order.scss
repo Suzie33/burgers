@@ -31,7 +31,7 @@ $orange: #e45028;
 
 .order__form-row {
     display: flex;
-    margin-bottom: 16px;
+    margin-bottom: 15px;
 }
 
 .order__form-block {
@@ -43,7 +43,7 @@ $orange: #e45028;
     }
 }
 
-.order__form-name {
+.order__form-label {
     display: block;
 }
 
@@ -58,7 +58,6 @@ $orange: #e45028;
 
     &:focus {
         border-color: #f9b43b;
-        transition: .2s;
     }
 }
 
@@ -69,7 +68,7 @@ $orange: #e45028;
     display: block;
 }
 
-.order__form-radio {
+.order__radio {
     margin-right: 20px;
     display: flex;
     align-items: center;
@@ -79,15 +78,15 @@ $orange: #e45028;
     }
 }
 
-.order__form-radio-input {
+.order__radio-input {
     display: none;
 }
 
-.order__form-radio-visible {
+.order__radio-visible {
     display: inline-block;
     position: relative;
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     margin-right: 8px;
 
     &::before {
@@ -121,11 +120,33 @@ $orange: #e45028;
     }
 }
 
-.order__form-radio-input:checked + .order__form-radio-visible::after {
+.order__radio-input:checked + .order__radio-visible::after {
     opacity: 1;
     transition: .2s;
 }
 
-.order__form-radio-label {
+.order__radio-label {
     display: inline-block;
+}
+
+.order__checkbox {
+    display: flex;
+    align-items: center;
+}
+
+.order__checkbox-input {
+    display: none;
+    outline: none;
+
+    &:checked + .order__checkbox-visible {
+        background: #fff url("../../img/check.png") no-repeat center center;
+    }
+}
+
+.order__checkbox-visible {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    margin-right: 8px;
 }

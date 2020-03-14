@@ -543,13 +543,18 @@ table {
 
 .btn {
   display: inline-block;
-  padding: 8px 16px;
+  padding: 12px 16px;
   background-color: #e45028;
   border-radius: 5px;
   font-family: "Ubuntu";
   font-weight: 500;
   text-transform: uppercase;
   font-size: 13px;
+  line-height: 1;
+  color: #fff;
+  outline: none;
+  border: none;
+  cursor: pointer;
 }
 .btn:hover {
   background-color: #c1401e;
@@ -562,6 +567,21 @@ table {
 .btn--bc--dark:hover {
   background-color: #1f2122;
   transition: 0.3s;
+}
+
+.btn--margin-right {
+  margin-right: 5px;
+}
+
+.btn--reset {
+  background-color: transparent;
+  text-transform: unset;
+  font-size: 14px;
+  font-weight: 300;
+}
+.btn--reset:hover {
+  background-color: transparent;
+  color: #e45028;
 }
 
 .page-title {
@@ -912,7 +932,7 @@ table {
 
 .order__form-row {
   display: flex;
-  margin-bottom: 16px;
+  margin-bottom: 15px;
 }
 
 .order__form-block {
@@ -923,7 +943,7 @@ table {
   margin-right: 0;
 }
 
-.order__form-name {
+.order__form-label {
   display: block;
 }
 
@@ -937,7 +957,6 @@ table {
 }
 .order__form-input:focus, .order__form-textarea:focus {
   border-color: #f9b43b;
-  transition: 0.2s;
 }
 
 .order__form-textarea {
@@ -946,27 +965,27 @@ table {
   display: block;
 }
 
-.order__form-radio {
+.order__radio {
   margin-right: 20px;
   display: flex;
   align-items: center;
 }
-.order__form-radio:last-child {
+.order__radio:last-child {
   margin-right: 0;
 }
 
-.order__form-radio-input {
+.order__radio-input {
   display: none;
 }
 
-.order__form-radio-visible {
+.order__radio-visible {
   display: inline-block;
   position: relative;
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
   margin-right: 8px;
 }
-.order__form-radio-visible::before {
+.order__radio-visible::before {
   content: "";
   display: block;
   position: absolute;
@@ -978,7 +997,7 @@ table {
   border-radius: 50%;
   background: #FFF;
 }
-.order__form-radio-visible::after {
+.order__radio-visible::after {
   content: "";
   display: block;
   position: absolute;
@@ -992,13 +1011,34 @@ table {
   opacity: 0;
 }
 
-.order__form-radio-input:checked + .order__form-radio-visible::after {
+.order__radio-input:checked + .order__radio-visible::after {
   opacity: 1;
   transition: 0.2s;
 }
 
-.order__form-radio-label {
+.order__radio-label {
   display: inline-block;
+}
+
+.order__checkbox {
+  display: flex;
+  align-items: center;
+}
+
+.order__checkbox-input {
+  display: none;
+  outline: none;
+}
+.order__checkbox-input:checked + .order__checkbox-visible {
+  background: #fff url("../../img/check.png") no-repeat center center;
+}
+
+.order__checkbox-visible {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background-color: #fff;
+  margin-right: 8px;
 }
 
 .contacts {
