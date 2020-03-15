@@ -22,4 +22,10 @@
 
     background-color: #2f3234;
     opacity: .93;
+
+    @include tablets {
+        width: 100%;
+        text-align: center;
+        padding-top: rem(220px);
+    }
 }

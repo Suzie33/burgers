@@ -7,6 +7,11 @@
     height: 0;
     width: 100%;
     overflow: hidden;
+
+    @include tablets {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 .accordeon__item {
@@ -34,6 +39,11 @@
     font-family: "Gagalin";
     text-transform: uppercase;
 
+    @include tablets {
+        display: inline-flex;
+        font-size: 25px;
+    }
+
     &::before {
         content: "";
         display: block;
@@ -58,6 +68,10 @@
 
 .avatar__block {
     width: rem(140px);
+
+    @include tablets {
+        margin-bottom: 15px;
+    }
 }
 
 .accordeon__frame {
@@ -84,4 +98,14 @@
 
     font-size: inherit;
     font-weight: 700;
+
+    @include tablets {
+        font-size: 14px;
+    }
+}
+
+.accordeon__text {
+    @include tablets {
+        font-size: 14px;
+    }
 }

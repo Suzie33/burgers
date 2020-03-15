@@ -2,6 +2,10 @@
     position: fixed;
     right: 4.45%;
     top: rem(90px);
+
+    @include tablets {
+        display: none;
+    }
 }
 
 .side-nav__item {

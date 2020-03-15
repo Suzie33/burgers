@@ -6,6 +6,10 @@
     font-weight: 500;
     text-transform: uppercase;
     font-size: rem(13px);
+
+    @include tablets {
+        display: none;
+    }
 }
 
 .nav__list {

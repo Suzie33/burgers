@@ -37,7 +37,7 @@
 
     font-family: "Lifehack";
     font-weight: normal;
-    font-size: rem(24px);
+    font-size: 24px;
     line-height: 1.17;
     letter-spacing: -0.025;
 }
@@ -45,4 +45,8 @@
 .features__description p {
     font-weight: 300;
     opacity: 0.8;
+
+    @include tablets {
+        font-size: 14px;
+    }
 }

@@ -1,9 +1,5 @@
 html {
-    @include laptop {
-      font-size: rem(15px);
-    }
-
-    @include tablets {
+        @include tablets {
         font-size: rem(14px);
     }
 

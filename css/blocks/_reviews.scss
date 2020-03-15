@@ -23,12 +23,22 @@
 
     opacity: 0;
     transform: scale(0.8);
+
+    @include tablets {
+        padding: 6.5% 11%;
+        text-align: center;
+    }
 }
 
 .reviews__card h4 {
     margin-bottom: 7.27%;
     font-family: "Gagalin";
     text-transform: uppercase;
+
+    @include tablets {
+        font-size: 14px;
+        margin-bottom: 3.5%;
+    }
 }
 
 .reviews__card p {
@@ -40,6 +50,11 @@
     position: relative;
     width: calc(100% / 4);
     height: 50vh;
+
+    @include tablets {
+        width: 50%;
+        height: 25vh;
+    }
 
     &:after {
         content: "";

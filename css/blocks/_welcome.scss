@@ -15,20 +15,36 @@
 
 .welcome__content {
     display: flex;
+
+    @include tablets {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 .welcome__picture, .welcome__text {
     width: 50%;
-} 
+
+    @include tablets {
+        width: 65%;
+    }
+}
 
 .welcome__picture {
-    background: url(../../img/icons/drops.svg) no-repeat right 60px;
+    @include tablets {
+        margin-bottom: rem(30px);
+    }
 }
 
 .welcome__text {
     padding-left: rem(11px);
     padding-bottom: rem(60px);
     align-self: flex-end;
+
+    @include tablets {
+        align-self: center;
+        text-align: center;
+    }
 }
 
 .welcome__img {
