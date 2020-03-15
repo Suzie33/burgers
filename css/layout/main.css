@@ -855,6 +855,10 @@ table {
   height: 100%;
   position: relative;
 }
+.accordeon-menu__trigger:hover .accordeon-menu__title {
+  color: #f9b43b;
+  transition: 0.2s;
+}
 
 .accordeon-menu__title {
   position: absolute;

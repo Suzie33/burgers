@@ -39,6 +39,11 @@
     flex-shrink: 0;
     height: 100%;
     position: relative;
+
+    &:hover .accordeon-menu__title {
+        color: #f9b43b;
+        transition: 0.2s;
+    }
 }
 
 .accordeon-menu__title {
