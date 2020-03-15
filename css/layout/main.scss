@@ -1,7 +1,21 @@
+// colors
+$yellow:#f9b43b;
+
+// resolutions
+
+$phones: 480px;
+$tablets: 768px;
+$laptop: 992px;
+$desktop: 1200px;
+
+// setups
 @import 'fonts';
 @import 'normalize';
+@import 'mixins';
+@import 'media';
 @import 'base';
 
+// blocks
 @import '../blocks/section';
 @import '../blocks/welcome';
 @import '../blocks/header';

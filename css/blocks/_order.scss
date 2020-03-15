@@ -22,7 +22,7 @@ $orange: #e45028;
 
 .order__form-group {
     width: calc(100% / 2 - 10px);
-    margin-right: 20px;
+    margin-right: rem(20px);
 
     &:last-child {
         margin-right: 0;
@@ -31,12 +31,12 @@ $orange: #e45028;
 
 .order__form-row {
     display: flex;
-    margin-bottom: 15px;
+    margin-bottom: rem(15px);
 }
 
 .order__form-block {
     flex-grow: 1;
-    margin-right: 20px;
+    margin-right: rem(20px);
 
     &:last-child {
         margin-right: 0;
@@ -49,7 +49,7 @@ $orange: #e45028;
 
 .order__form-input {
     width: 100%;
-    padding: 8px 21px;
+    padding: rem(8px) rem(21px);
 
     color: #2f3234;
     border: 2px solid transparent;
@@ -63,13 +63,13 @@ $orange: #e45028;
 
 .order__form-textarea {
     @extend .order__form-input;
-    height: 110px;
+    height: rem(110px);
     resize: none;
     display: block;
 }
 
 .order__radio {
-    margin-right: 20px;
+    margin-right: rem(20px);
     display: flex;
     align-items: center;
 
@@ -85,9 +85,9 @@ $orange: #e45028;
 .order__radio-visible {
     display: inline-block;
     position: relative;
-    width: 15px;
-    height: 15px;
-    margin-right: 8px;
+    width: rem(15px);
+    height: rem(15px);
+    margin-right: rem(8px);
 
     &::before {
         content: '';
@@ -97,8 +97,8 @@ $orange: #e45028;
         left: 50%;
         transform: translate(-50%, -50%);
 
-        width: 15px;
-        height: 15px;
+        width: rem(15px);
+        height: rem(15px);
         
         border-radius: 50%;
         background: #FFF;
@@ -112,8 +112,8 @@ $orange: #e45028;
         left: 50%;
         transform: translate(-50%, -50%);
 
-        width: 7px;
-        height: 7px;
+        width: rem(7px);
+        height: rem(7px);
         border-radius: 50%;
         background: $orange;
         opacity: 0;
@@ -145,8 +145,8 @@ $orange: #e45028;
 
 .order__checkbox-visible {
     display: inline-block;
-    width: 15px;
-    height: 15px;
+    width: rem(15px);
+    height: rem(15px);
     background-color: #fff;
-    margin-right: 8px;
+    margin-right: rem(8px);
 }
