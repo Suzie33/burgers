@@ -443,6 +443,11 @@ table {
   height: 100vh;
   min-height: 650px;
 }
+@media screen and (max-width: 480px) {
+  .section {
+    min-height: 568px;
+  }
+}
 
 .section__title {
   font-family: "Gagalin", sans-serif;
@@ -469,6 +474,7 @@ table {
 @media screen and (max-width: 480px) {
   .section__title {
     font-size: 50px;
+    margin-bottom: 0.625rem;
   }
 }
 .section__title--welcome {
@@ -476,7 +482,7 @@ table {
 }
 @media screen and (max-width: 480px) {
   .section__title--welcome {
-    font-size: 63px;
+    font-size: 55px;
   }
 }
 
@@ -699,14 +705,14 @@ table {
 
 .page-title {
   font-family: "Lifehack", sans-serif;
-  font-size: 3.75rem;
+  font-size: 4.0625rem;
   line-height: 1;
   letter-spacing: -0.025em;
   text-transform: lowercase;
 }
 @media screen and (max-width: 480px) {
   .page-title {
-    font-size: 52px;
+    font-size: 50px;
   }
 }
 
@@ -990,6 +996,11 @@ table {
 
 .accordeon__desc {
   width: 50%;
+}
+@media screen and (max-width: 480px) {
+  .accordeon__desc {
+    width: 80%;
+  }
 }
 
 .accordeon__subtitle {

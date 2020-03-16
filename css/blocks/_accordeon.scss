@@ -92,6 +92,10 @@
 
 .accordeon__desc {
     width: 50%;
+
+    @include phones {
+        width: 80%;
+    }
 }
 
 .accordeon__subtitle {
