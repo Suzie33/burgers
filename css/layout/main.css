@@ -474,7 +474,7 @@ table {
 @media screen and (max-width: 480px) {
   .section__title {
     font-size: 50px;
-    margin-bottom: 0.625rem;
+    margin-bottom: 0;
   }
 }
 .section__title--welcome {
@@ -1273,9 +1273,11 @@ table {
 .order__form-group {
   width: calc(100% / 2 - 10px);
   margin-right: 1.25rem;
+  margin-bottom: 0.9375rem;
 }
 .order__form-group:last-child {
   margin-right: 0;
+  margin-bottom: 0;
 }
 @media screen and (max-width: 768px) {
   .order__form-group {
@@ -1286,6 +1288,9 @@ table {
 .order__form-row {
   display: flex;
   margin-bottom: 0.9375rem;
+}
+.order__form-row:last-child {
+  margin-bottom: 0;
 }
 @media screen and (max-width: 480px) {
   .order__form-row--centered {

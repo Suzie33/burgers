@@ -32,9 +32,11 @@ $orange: #e45028;
 .order__form-group {
     width: calc(100% / 2 - 10px);
     margin-right: rem(20px);
+    margin-bottom: rem(15px);
 
     &:last-child {
         margin-right: 0;
+        margin-bottom: 0;
     }
 
     @include tablets {
@@ -45,6 +47,10 @@ $orange: #e45028;
 .order__form-row {
     display: flex;
     margin-bottom: rem(15px);
+
+    &:last-child {
+        margin-bottom: 0;
+    }
 
     &--centered {
         @include phones {

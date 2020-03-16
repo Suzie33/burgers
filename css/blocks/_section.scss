@@ -32,7 +32,7 @@
 
     @include phones {
         font-size: 50px;
-        margin-bottom: rem(10px);
+        margin-bottom: 0;
     }
 
     &--welcome {
