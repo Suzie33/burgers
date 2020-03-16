@@ -25,4 +25,8 @@
         top: 13.8%;
         color: #fff;
     }
+
+    @include tablets {
+        text-align: center;
+    }
 }

@@ -98,14 +98,4 @@
 
     font-size: inherit;
     font-weight: 700;
-
-    @include tablets {
-        font-size: 14px;
-    }
-}
-
-.accordeon__text {
-    @include tablets {
-        font-size: 14px;
-    }
 }

@@ -10,6 +10,11 @@ $orange: #e45028;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+
+    @include tablets {
+        flex-direction: column;
+        width: 66%;
+    }
 }
 
 .order__container {
@@ -27,6 +32,10 @@ $orange: #e45028;
     &:last-child {
         margin-right: 0;
     }
+
+    @include tablets {
+        width: 100%;
+    }
 }
 
 .order__form-row {
@@ -37,6 +46,10 @@ $orange: #e45028;
 .order__form-block {
     flex-grow: 1;
     margin-right: rem(20px);
+
+    @include tablets {
+        margin-right: rem(28px);
+    }
 
     &:last-child {
         margin-right: 0;
