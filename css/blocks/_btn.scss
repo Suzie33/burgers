@@ -21,12 +21,26 @@
     }
 }
 
-.btn--bc--dark {
+.btn--reviews {
     background-color: #2f3234;
 
     &:hover {
         background-color: #1f2122;
         transition: .3s;
+    }
+
+    &__phones {
+        display: none;
+
+        @include phones {
+            display: inline-block;
+        }
+    }
+
+    &__default {
+        @include phones {
+            display: none;
+        }
     }
 }
 
@@ -37,7 +51,6 @@
 .btn--reset {
     background-color: transparent;
     text-transform: unset;
-    font-size: rem(14px);
     font-weight: 300;
 
     &:hover {

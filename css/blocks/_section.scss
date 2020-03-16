@@ -9,10 +9,6 @@
     line-height: 1.18;
     color: #f9b43b;
     margin-bottom: rem(40px);
-
-    &--welcome {
-        margin-bottom: rem(15px);
-    }
     
     &--features {
         color: #2f3234;
@@ -28,5 +24,17 @@
 
     @include tablets {
         text-align: center;
+    }
+
+    @include phones {
+        font-size: 50px;
+    }
+
+    &--welcome {
+        margin-bottom: rem(15px);
+
+        @include phones {
+            font-size: 63px;
+        }
     }
 }

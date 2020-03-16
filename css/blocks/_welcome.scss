@@ -28,6 +28,10 @@
     @include tablets {
         width: 65%;
     }
+
+    @include phones {
+        width: 82%;
+    }
 }
 
 .welcome__picture {
@@ -44,6 +48,11 @@
     @include tablets {
         align-self: center;
         text-align: center;
+        padding: 0;
+    }
+
+    @include phones {
+        width: 100%;
     }
 }
 

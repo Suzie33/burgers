@@ -15,12 +15,27 @@
 
     &--active {
         width: 50%;
+
+        @include tablets {
+            flex-grow: 1;
+        }
+
+        @include phones {
+            position: absolute;
+            height: 100%;
+            width: 100vw;
+            z-index: 10;
+        }
     }
 
     &--active .accordeon-menu__content {
         display: block;
         width: 100%;
         padding: 7.7% 6.5%;
+
+        @include phones {
+            padding: 13% 7.7%;
+        }
     }
 
     &--active .accordeon-menu__text {
@@ -77,4 +92,20 @@
 
 .accordeon-menu__text {
     font-weight: 300;
+}
+
+.accordeon-menu__content-link {
+    display: none;
+
+    @include phones {
+        display: block;
+        width: 18px;
+        height: 18px;
+        background: url("../../img/close.png") no-repeat center center;
+        background-size: contain;
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        transform: translate(50%, -50%);
+    }
 }

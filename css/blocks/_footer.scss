@@ -9,10 +9,21 @@
     color: #fff;
     padding-top: rem(6px);
     padding-bottom: rem(10px);
+
+    @include phones {
+        padding-top: rem(10px);
+        padding-bottom: rem(20px);
+    }
 }
 
 .footer__container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include phones {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
 }

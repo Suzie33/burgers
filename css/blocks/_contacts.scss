@@ -11,6 +11,10 @@
 
 .contacts__text {
     font-style: normal;
+
+    @include phones {
+        margin-bottom: 14px;
+    }
 }
 
 .contacts__tel {

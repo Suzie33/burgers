@@ -15,6 +15,10 @@ $orange: #e45028;
         flex-direction: column;
         width: 66%;
     }
+
+    @include phones {
+        width: 100%;
+    }
 }
 
 .order__container {
@@ -41,6 +45,12 @@ $orange: #e45028;
 .order__form-row {
     display: flex;
     margin-bottom: rem(15px);
+
+    &--centered {
+        @include phones {
+            justify-content: center;
+        }
+    }
 }
 
 .order__form-block {
