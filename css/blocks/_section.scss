@@ -1,6 +1,10 @@
 .section {
     height: 100vh;
     min-height: 650px;
+
+    @include phones {
+        min-height: 568px;
+    }
 }
 
 .section__title {
@@ -8,11 +12,34 @@
     font-size: 72px;
     line-height: 1.18;
     color: #f9b43b;
-    margin-bottom: 15px;
-
+    margin-bottom: rem(40px);
+    
     &--features {
-        margin-bottom: 43px;
         color: #2f3234;
         text-align: center;
+    }
+
+    &--menu {
+        position: absolute;
+        left: 8.6%;
+        top: 13.8%;
+        color: #fff;
+    }
+
+    @include tablets {
+        text-align: center;
+    }
+
+    @include phones {
+        font-size: 50px;
+        margin-bottom: 10px;
+    }
+
+    &--welcome {
+        margin-bottom: rem(15px);
+
+        @include phones {
+            font-size: 55px;
+        }
     }
 }

@@ -1,3 +1,13 @@
+html {
+        @include tablets {
+        font-size: rem(14px);
+    }
+
+    @include phones {
+      font-size: rem(13px);
+    }
+  }
+
 html, body {
     height: 100%;
 }
@@ -17,7 +27,6 @@ body {
 
 .wrapper {
     overflow: hidden;
-    min-width: 1100px;
     min-height: 100%;
 
     display: flex;
@@ -29,8 +38,9 @@ body {
 }
 
 .container {
-    width: 940px;
     margin: 0 auto;
+    max-width: 940px;
+    width: 95%;
 }
 
 *, ::before, ::after {

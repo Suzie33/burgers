@@ -1,0 +1,111 @@
+.accordeon-menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+
+    display: flex;
+    justify-content: flex-end;
+}
+
+.accordeon-menu__item {
+    display: flex;
+    justify-content: flex-end;
+    height: 100%; 
+
+    &--active {
+        width: 50%;
+
+        @include tablets {
+            flex-grow: 1;
+        }
+
+        @include phones {
+            position: absolute;
+            height: 100%;
+            width: 100vw;
+            z-index: 10;
+        }
+    }
+
+    &--active .accordeon-menu__content {
+        display: block;
+        width: 100%;
+        padding: 7.7% 6.5%;
+
+        @include phones {
+            padding: 13% 7.7%;
+        }
+    }
+
+    &--active .accordeon-menu__text {
+        max-height: 100%;
+        overflow: auto;
+    }
+
+    &--active .accordeon-menu__title {
+        color: #f9b43b;
+    }
+}
+
+.accordeon-menu__trigger {
+    display: block;
+    width: rem(80px);
+    flex-shrink: 0;
+    height: 100%;
+    position: relative;
+
+    &:hover .accordeon-menu__title {
+        color: #f9b43b;
+        transition: 0.2s;
+    }
+}
+
+.accordeon-menu__title {
+    position: absolute;
+    left: 50%;
+    top: 93.85%;
+    transform: rotate(-90deg) translateY(-50%);
+    transform-origin: 0 0;
+
+    font-family: "Gagalin", sans-serif;
+    font-size: rem(40px);
+    line-height: 1.18;
+    color: #fff;
+    white-space: nowrap;
+}
+
+@each $bg in (meat, vegan, diet) {
+    .accordeon-menu__item--#{$bg} .accordeon-menu__trigger {
+        background: #000 url("../../img/menu_#{$bg}_bg.jpg") no-repeat center center;
+        background-size: cover;
+    }
+}
+
+.accordeon-menu__content {
+    padding: 0;
+    height: 100%;
+    width: 0;
+    overflow: hidden;
+    background-color: rgba(47, 50, 52, 0.93);
+}
+
+.accordeon-menu__text {
+    font-weight: 300;
+}
+
+.accordeon-menu__content-link {
+    display: none;
+
+    @include phones {
+        display: block;
+        width: 18px;
+        height: 18px;
+        background: url("../../img/close.png") no-repeat center center;
+        background-size: contain;
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        transform: translate(50%, -50%);
+    }
+}
