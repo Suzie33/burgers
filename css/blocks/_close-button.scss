@@ -1,0 +1,15 @@
+.close-button {
+    display: none;
+    width: 18px;
+    height: 18px;
+    background: url("../../img/close.png") no-repeat center center;
+    background-size: contain;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    transform: translate(50%, -50%);
+
+    @include phones {
+        display: block;
+    }
+}
