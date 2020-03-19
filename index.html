@@ -12,7 +12,7 @@
 <body>
     <div class="wrapper">
         <div class="wrapper__content">
-            <section class="section welcome">
+            <section id="section-welcome" class="section welcome">
                 <div class="container welcome__container">
                     <header class="header">
                         <div class="logo">
@@ -20,35 +20,35 @@
                                 <img src="img/logo.png" alt="Burgers" class="logo__img" width="92" height="69">
                             </a>
                         </div>
-                        <nav class="nav nav--hamburger">
+                        <nav id="main-nav" class="nav">
                             <ul class="nav__list">
                                 <li class="nav__item">
-                                    <a href="#" class="nav__link">О нас</a>
+                                    <a href="#section-about-us" class="nav__link">О нас</a>
                                 </li>
                                 <li class="nav__item">
                                     <a href="#" class="nav__link">Бургеры</a>
                                 </li>
                                 <li class="nav__item">
-                                    <a href="#" class="nav__link">Команда</a>
+                                    <a href="#section-team" class="nav__link">Команда</a>
                                 </li>
                                 <li class="nav__item">
-                                    <a href="#" class="nav__link">Меню</a>
+                                    <a href="#section-menu" class="nav__link">Меню</a>
                                 </li>
                                 <li class="nav__item">
-                                    <a href="#" class="nav__link">Отзывы</a>
+                                    <a href="#section-reviews" class="nav__link">Отзывы</a>
                                 </li>
                                 <li class="nav__item">
                                     <a href="#" class="nav__link">Как мы работаем</a>
                                 </li>
                                 <li class="nav__item">
-                                    <a href="#" class="nav__link">Контакты</a>
+                                    <a href="#section-contacts" class="nav__link">Контакты</a>
                                 </li>
                             </ul>
-                            <a href="#" class="close-button"></a>
+                            <a id="close-nav-button" href="#" class="close-button"></a>
                         </nav>
                         <div class="header__links">
-                            <a href="#" class="btn">Заказать</a>
-                            <a class="hamburger-menu-link" href="#">
+                            <a href="#section-order" class="btn">Заказать</a>
+                            <a id="hamburger-menu-link" class="hamburger-menu-link" href="#">
                                 <div class="hamburger-menu-link__bars"></div>
                               </a>
                         </div>
@@ -63,7 +63,7 @@
                         </div>
                     </div>
                     <div class="arrow-scroll">
-                        <a href="#" class="arrow-scroll__link">
+                        <a href="#section-about-us" class="arrow-scroll__link">
                             <svg class="arrow-scroll__img" width="29" height="14">
                                 <use xlink:href="img/sprite.svg#arrow-scroll"></use>
                             </svg>
@@ -72,7 +72,7 @@
                 </div>
             </section>
 
-            <section class="section features">
+            <section id="section-about-us" class="section features">
                 <div class="container features__container">
                     <h2 class="section__title section__title--features">Мы лучшие</h2>
                     <ul class="features__list">
@@ -113,7 +113,7 @@
                 </div>
             </section>
 
-            <section class="section team">
+            <section id="section-team" class="section team">
                 <img src="img/team-background.jpg" alt="Наша Команда" class="team__background">
                 <div class="team__description">
                     <h2 class="section__title">Команда</h2>
@@ -178,7 +178,7 @@
                 </div>
             </section>
 
-            <section class="section menu">
+            <section id="section-menu" class="section menu">
                 <img src="img/menu-background.jpg" alt="Бургер" class="menu__background">
                 <h2 class="section__title section__title--menu">Меню</h2>
                 <ul class="accordeon-menu">
@@ -219,7 +219,7 @@
                 </ul>
             </section>
 
-            <section class="section reviews">
+            <section id="section-reviews" class="section reviews">
                 <ul class="reviews__list">
                     <li class="reviews__item">
                         <img src="img/review-1.jpg" alt="review1" class="reviews__img">
@@ -312,7 +312,7 @@
                 </ul>
             </section>
 
-            <section class="section order">
+            <section id="section-order" class="section order">
                 <div class="container order__container">
                     <h2 class="section__title">Закажите доставку</h2>
                     <form action="#" method="POST" class="order__form">
@@ -389,7 +389,7 @@
                 </div>
             </section>
 
-            <section class="section contacts">
+            <section id="section-contacts" class="section contacts">
                 <img src="img/map.jpg" alt="Карта" class="contacts__map">
                 <footer class="footer">
                     <div class="container footer__container">
@@ -442,35 +442,37 @@
             <div class="side-nav">
                 <ul class="side-nav__list">
                     <li class="side-nav__item">
-                        <a href="#" class="side-nav__link side-nav__link--active"></a>
+                        <a href="#section-welcome" class="side-nav__link side-nav__link--active"></a>
+                    </li>
+                    <li class="side-nav__item">
+                        <a href="#section-about-us" class="side-nav__link"></a>
                     </li>
                     <li class="side-nav__item">
                         <a href="#" class="side-nav__link"></a>
                     </li>
                     <li class="side-nav__item">
-                        <a href="#" class="side-nav__link"></a>
+                        <a href="#section-team" class="side-nav__link"></a>
+                    </li>
+                    <li class="side-nav__item">
+                        <a href="#section-menu" class="side-nav__link"></a>
+                    </li>
+                    <li class="side-nav__item">
+                        <a href="#section-reviews" class="side-nav__link"></a>
                     </li>
                     <li class="side-nav__item">
                         <a href="#" class="side-nav__link"></a>
                     </li>
                     <li class="side-nav__item">
-                        <a href="#" class="side-nav__link"></a>
+                        <a href="#section-order" class="side-nav__link"></a>
                     </li>
                     <li class="side-nav__item">
-                        <a href="#" class="side-nav__link"></a>
-                    </li>
-                    <li class="side-nav__item">
-                        <a href="#" class="side-nav__link"></a>
-                    </li>
-                    <li class="side-nav__item">
-                        <a href="#" class="side-nav__link"></a>
-                    </li>
-                    <li class="side-nav__item">
-                        <a href="#" class="side-nav__link"></a>
+                        <a href="#section-contacts" class="side-nav__link"></a>
                     </li>
                 </ul>
             </div>
         </div>
     </div>
+
+    <script src="scripts/main.js"></script>
 </body>
 </html>
