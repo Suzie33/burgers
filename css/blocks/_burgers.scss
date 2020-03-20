@@ -4,16 +4,83 @@
     justify-content: center;
 
     background-image: linear-gradient(to top, #f9b43b 0%, #eb8c38 48%, #f9b43b 74%);
+    color: #fff;
 }
 
 .burgers__container {
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0;
 }
 
-.burgers__content {
+.burgers__list {
+    height: 72.3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.burgers__item {
+    height: 100%;
     display: flex;
     align-items: center;
+}
+
+.burgers__picture, .burgers__text {
+    width: calc(100% / 2 - 0.5%);
+
+}
+
+.burgers__picture {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.burgers__text p {
+    font-weight: 300;
+}
+
+.burgers__price {
+    margin-right: rem(30px);
+
+    font-family: "Gagalin";
+    font-size: rem(72px);
+    letter-spacing: -0.025em;
+    color: #e35028;
+
+    &--size--small {
+        font-size: rem(30px);
+    }
+}
+
+.burgers__kkal {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 60px;
+
+    font-family: "Gagalin";
+    text-align: center;
+    opacity: 0.5;
+}
+
+.burgers__kkal-pic {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    
+    background: url('../../img/icons/kkal.svg') no-repeat center center;
+}
+
+.burgers__kkal-number {
+    position: absolute;
+    left: 50%;
+    top: 23px;
+    transform: translateX(-50%);
+    font-size: rem(20px);
 }

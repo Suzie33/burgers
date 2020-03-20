@@ -485,6 +485,11 @@ table {
     font-size: 55px;
   }
 }
+.section__title--burgers {
+  text-align: left;
+  line-height: 0.9;
+  color: inherit;
+}
 
 .welcome {
   position: relative;
@@ -654,7 +659,7 @@ table {
 
 .btn {
   display: inline-block;
-  padding: 0.75rem 1rem;
+  padding: 0.6875rem 1rem;
   background-color: #e45028;
   border-radius: 5px;
   font-family: "Ubuntu";
@@ -821,17 +826,23 @@ table {
   height: 0.875rem;
 }
 
-.arrow-scroll--left .arrow-scroll__link {
+.arrow-scroll--left, .arrow-scroll--right {
+  margin-bottom: 0;
+}
+.arrow-scroll--left .arrow-scroll__link, .arrow-scroll--right .arrow-scroll__link {
   width: 0.9375rem;
   height: 1.6875rem;
+}
+
+.arrow-scroll--left {
+  margin-right: 1.25rem;
 }
 .arrow-scroll--left .arrow-scroll__img {
   transform: rotate(90deg) translate(0%, 50%);
 }
 
-.arrow-scroll--right .arrow-scroll__link {
-  width: 0.9375rem;
-  height: 1.6875rem;
+.arrow-scroll--right {
+  margin-left: 1.1875rem;
 }
 .arrow-scroll--right .arrow-scroll__img {
   transform: rotate(-90deg) translate(0%, -50%);
@@ -925,18 +936,79 @@ table {
   align-items: center;
   justify-content: center;
   background-image: linear-gradient(to top, #f9b43b 0%, #eb8c38 48%, #f9b43b 74%);
+  color: #fff;
 }
 
 .burgers__container {
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0;
 }
 
-.burgers__content {
+.burgers__list {
+  height: 72.3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.burgers__item {
+  height: 100%;
   display: flex;
   align-items: center;
+}
+
+.burgers__picture, .burgers__text {
+  width: calc(100% / 2 - 0.5%);
+}
+
+.burgers__picture {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.burgers__text p {
+  font-weight: 300;
+}
+
+.burgers__price {
+  margin-right: 1.875rem;
+  font-family: "Gagalin";
+  font-size: 4.5rem;
+  letter-spacing: -0.025em;
+  color: #e35028;
+}
+.burgers__price--size--small {
+  font-size: 1.875rem;
+}
+
+.burgers__kkal {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60px;
+  font-family: "Gagalin";
+  text-align: center;
+  opacity: 0.5;
+}
+
+.burgers__kkal-pic {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background: url("../../img/icons/kkal.svg") no-repeat center center;
+}
+
+.burgers__kkal-number {
+  position: absolute;
+  left: 50%;
+  top: 23px;
+  transform: translateX(-50%);
+  font-size: 1.25rem;
 }
 
 .team {
