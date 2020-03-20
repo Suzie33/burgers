@@ -1,0 +1,19 @@
+.burgers {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-image: linear-gradient(to top, #f9b43b 0%, #eb8c38 48%, #f9b43b 74%);
+}
+
+.burgers__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.burgers__content {
+    display: flex;
+    align-items: center;
+}

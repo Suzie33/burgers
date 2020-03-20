@@ -821,6 +821,22 @@ table {
   height: 0.875rem;
 }
 
+.arrow-scroll--left .arrow-scroll__link {
+  width: 0.9375rem;
+  height: 1.6875rem;
+}
+.arrow-scroll--left .arrow-scroll__img {
+  transform: rotate(90deg) translate(0%, 50%);
+}
+
+.arrow-scroll--right .arrow-scroll__link {
+  width: 0.9375rem;
+  height: 1.6875rem;
+}
+.arrow-scroll--right .arrow-scroll__img {
+  transform: rotate(-90deg) translate(0%, -50%);
+}
+
 .features {
   background: url("../../img/features-background.jpg") no-repeat center center;
   background-size: cover;
@@ -902,6 +918,25 @@ table {
   .features__description p {
     font-size: 0.875rem;
   }
+}
+
+.burgers {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(to top, #f9b43b 0%, #eb8c38 48%, #f9b43b 74%);
+}
+
+.burgers__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.burgers__content {
+  display: flex;
+  align-items: center;
 }
 
 .team {
