@@ -5,40 +5,93 @@
 
     background-image: linear-gradient(to top, #f9b43b 0%, #eb8c38 48%, #f9b43b 74%);
     color: #fff;
+
+    @include phones {
+        align-items: stretch;
+        padding-bottom: 9%;
+    }
 }
 
 .burgers__container {
+    max-width: 1008px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0;
+
+    
 }
 
 .burgers__list {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    position: relative;
+
+    @include phones {
+        align-self: flex-end;
+    }
 }
 
 .burgers__item {
     display: flex;
     align-items: center;
     position: relative;
+
+    @include tablets {
+        flex-direction: column;
+    }
+
+    @include phones {
+        justify-content: flex-end;
+    }
 }
 
 .burgers__picture, .burgers__text {
     width: calc(100% / 2 - 0.5%);
-
 }
 
 .burgers__picture {
     position: relative;
     display: flex;
     align-items: center;
+
+    @include tablets {
+        width: 72%;
+        margin-bottom: 25px;
+    }
+
+    @include phones {
+        width: 100%;
+    }
+}
+
+.burgers__img {
+    @include phones {
+        width: 85%;
+        margin: 0 auto;
+    }
+}
+
+.burgers__text {
+    @include tablets {
+        text-align: center;
+        width: 83%;
+    }
+
+    @include phones {
+        width: 100%;
+    }
 }
 
 .burgers__text p {
     font-weight: 300;
+
+    @include phones {
+        width: 100%;
+        font-size: rem(14px);
+    }
 }
 
 .burgers__price {
@@ -46,11 +99,17 @@
 
     font-family: "Gagalin";
     font-size: rem(72px);
+    line-height: 1.3;
     letter-spacing: -0.025em;
     color: #e35028;
 
     &--size--small {
         font-size: rem(30px);
+    }
+
+    @include phones {
+        margin-right: 10px;
+        font-size: 50px;
     }
 }
 
@@ -64,6 +123,12 @@
     font-family: "Gagalin";
     text-align: center;
     opacity: 0.5;
+
+    @include tablets {
+        top: rem(-80px);
+        left: auto;
+        right: 0;
+    }
 }
 
 .burgers__kkal-pic {
@@ -101,8 +166,6 @@
     &:hover {
         background-color: #e35028;
         cursor: pointer;
-
-        
     }
 }
 
@@ -160,4 +223,10 @@
 .burgers__composition-ingredient {
     font-weight: 500;
     margin-right: auto;
+}
+
+.burgers__info {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
 }
