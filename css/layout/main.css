@@ -940,7 +940,6 @@ table {
 }
 
 .burgers__container {
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -948,16 +947,15 @@ table {
 }
 
 .burgers__list {
-  height: 72.3%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .burgers__item {
-  height: 100%;
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .burgers__picture, .burgers__text {
@@ -966,7 +964,6 @@ table {
 
 .burgers__picture {
   position: relative;
-  height: 100%;
   display: flex;
   align-items: center;
 }
@@ -989,7 +986,7 @@ table {
 .burgers__kkal {
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: -4.375rem;
   width: 60px;
   font-family: "Gagalin";
   text-align: center;
@@ -1009,6 +1006,77 @@ table {
   top: 23px;
   transform: translateX(-50%);
   font-size: 1.25rem;
+}
+
+.burgers__composition {
+  position: absolute;
+  top: -5rem;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 5.625rem;
+  height: 5.625rem;
+  border-radius: 5px;
+  background-color: #f08c33;
+  line-height: 1.1;
+}
+.burgers__composition:hover {
+  background-color: #e35028;
+  cursor: pointer;
+}
+
+.burgers__composition-icon {
+  margin-bottom: 0.3125rem;
+}
+
+.burgers__composition-text {
+  font-family: "Gagalin";
+}
+
+.burgers__dropout {
+  padding: 1.25rem;
+  position: absolute;
+  top: -5rem;
+  width: 16.875rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  opacity: 0.9;
+  border-radius: 5px;
+  color: #2f3234;
+  left: -9999px;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.burgers__composition:hover ~ .burgers__dropout {
+  left: 5.625rem;
+  opacity: 1;
+}
+
+.burgers__composition-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.375rem;
+}
+.burgers__composition-item:last-child {
+  margin-bottom: 0;
+}
+
+.burgers__composition-pic {
+  width: 48px;
+  margin-right: 1.4375rem;
+}
+
+.burgers__composition-img {
+  display: inline;
+  text-align: center;
+}
+
+.burgers__composition-ingredient {
+  font-weight: 500;
+  margin-right: auto;
 }
 
 .team {
