@@ -986,6 +986,7 @@ table {
 @media screen and (max-width: 480px) {
   .burgers__list {
     align-self: flex-end;
+    height: 85%;
   }
 }
 
@@ -1089,6 +1090,11 @@ table {
     right: 0;
   }
 }
+@media screen and (max-width: 480px) {
+  .burgers__kkal {
+    top: -37%;
+  }
+}
 
 .burgers__kkal-pic {
   position: relative;
@@ -1123,6 +1129,11 @@ table {
   background-color: #e35028;
   cursor: pointer;
 }
+@media screen and (max-width: 480px) {
+  .burgers__composition {
+    top: -37%;
+  }
+}
 
 .burgers__composition-icon {
   margin-bottom: 0.3125rem;
@@ -1144,6 +1155,11 @@ table {
   left: -9999px;
   opacity: 0;
   transition: opacity 0.5s;
+}
+@media screen and (max-width: 480px) {
+  .burgers__dropout {
+    top: -37%;
+  }
 }
 
 .burgers__composition:hover ~ .burgers__dropout {

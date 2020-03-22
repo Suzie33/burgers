@@ -31,6 +31,7 @@
 
     @include phones {
         align-self: flex-end;
+        height: 85%;
     }
 }
 
@@ -129,6 +130,10 @@
         left: auto;
         right: 0;
     }
+
+    @include phones {
+        top: -37%;
+    }
 }
 
 .burgers__kkal-pic {
@@ -167,6 +172,10 @@
         background-color: #e35028;
         cursor: pointer;
     }
+
+    @include phones {
+        top: -37%;
+    }
 }
 
 .burgers__composition-icon {
@@ -192,6 +201,10 @@
     left: -9999px;
     opacity: 0;
     transition: opacity .5s;
+
+    @include phones {
+        top: -37%;
+    }
 }
 
 .burgers__composition:hover ~ .burgers__dropout {
