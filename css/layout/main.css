@@ -1160,6 +1160,7 @@ table {
   .burgers__dropout {
     width: 332px;
     padding-right: 70px;
+    z-index: 5;
   }
 }
 @media screen and (max-width: 480px) {
@@ -1483,6 +1484,7 @@ table {
 @media screen and (max-width: 768px) {
   .close-button--dropout {
     display: block;
+    z-index: 5;
   }
 }
 

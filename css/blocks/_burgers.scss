@@ -205,6 +205,7 @@
     @include tablets {
         width: 332px;
         padding-right: 70px;
+        z-index: 5;
     }
 
     @include phones {
