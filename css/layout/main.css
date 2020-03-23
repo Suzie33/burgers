@@ -965,7 +965,6 @@ table {
 @media screen and (max-width: 480px) {
   .burgers {
     align-items: stretch;
-    padding-bottom: 9%;
   }
 }
 
@@ -975,6 +974,7 @@ table {
   justify-content: center;
   align-items: center;
   margin: 0;
+  position: relative;
 }
 
 .burgers__list {
@@ -986,14 +986,18 @@ table {
 @media screen and (max-width: 480px) {
   .burgers__list {
     align-self: flex-end;
-    height: 85%;
+    height: 97%;
   }
 }
 
 .burgers__item {
-  display: flex;
+  display: none;
   align-items: center;
   position: relative;
+  height: 100%;
+}
+.burgers__item--visible {
+  display: flex;
 }
 @media screen and (max-width: 768px) {
   .burgers__item {
@@ -1002,7 +1006,7 @@ table {
 }
 @media screen and (max-width: 480px) {
   .burgers__item {
-    justify-content: flex-end;
+    justify-content: center;
   }
 }
 
@@ -1011,13 +1015,14 @@ table {
 }
 
 .burgers__picture {
-  position: relative;
   display: flex;
   align-items: center;
+  margin-right: 1.25rem;
 }
 @media screen and (max-width: 768px) {
   .burgers__picture {
     width: 72%;
+    margin-right: 0;
     margin-bottom: 25px;
   }
 }
@@ -1087,12 +1092,13 @@ table {
   .burgers__kkal {
     top: -5rem;
     left: auto;
-    right: 0;
+    right: 2.8125rem;
   }
 }
 @media screen and (max-width: 480px) {
   .burgers__kkal {
-    top: -37%;
+    top: 0;
+    right: 0;
   }
 }
 
@@ -1129,9 +1135,15 @@ table {
   background-color: #e35028;
   cursor: pointer;
 }
+@media screen and (max-width: 768px) {
+  .burgers__composition {
+    left: 2.8125rem;
+  }
+}
 @media screen and (max-width: 480px) {
   .burgers__composition {
-    top: -37%;
+    top: 0;
+    left: 0;
   }
 }
 
@@ -1165,8 +1177,8 @@ table {
 }
 @media screen and (max-width: 480px) {
   .burgers__dropout {
-    top: -37%;
-    width: calc(100% - 50px);
+    top: 0%;
+    width: calc(100% - 70px);
     padding-right: 50px;
   }
 }
@@ -1174,6 +1186,31 @@ table {
 .burgers__composition:hover ~ .burgers__dropout {
   left: 5.625rem;
   opacity: 1;
+}
+@media screen and (max-width: 768px) {
+  .burgers__composition:hover ~ .burgers__dropout {
+    left: 8.4375rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .burgers__composition:hover ~ .burgers__dropout {
+    left: 5.625rem;
+  }
+}
+
+.burgers__dropout--visible {
+  left: 5.625rem;
+  opacity: 1;
+}
+@media screen and (max-width: 768px) {
+  .burgers__dropout--visible {
+    left: 8.4375rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .burgers__dropout--visible {
+    left: 5.625rem;
+  }
 }
 
 .burgers__composition-item {

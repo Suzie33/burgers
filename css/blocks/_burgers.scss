@@ -8,7 +8,6 @@
 
     @include phones {
         align-items: stretch;
-        padding-bottom: 9%;
     }
 }
 
@@ -18,8 +17,7 @@
     justify-content: center;
     align-items: center;
     margin: 0;
-
-    
+    position: relative;
 }
 
 .burgers__list {
@@ -31,21 +29,26 @@
 
     @include phones {
         align-self: flex-end;
-        height: 85%;
+        height: 97%;
     }
 }
 
 .burgers__item {
-    display: flex;
+    display: none;
     align-items: center;
     position: relative;
+    height: 100%;
+
+    &--visible {
+        display: flex;
+    }
 
     @include tablets {
         flex-direction: column;
     }
 
     @include phones {
-        justify-content: flex-end;
+        justify-content: center;
     }
 }
 
@@ -54,12 +57,13 @@
 }
 
 .burgers__picture {
-    position: relative;
     display: flex;
     align-items: center;
+    margin-right: rem(20px);
 
     @include tablets {
         width: 72%;
+        margin-right: 0;
         margin-bottom: 25px;
     }
 
@@ -128,11 +132,12 @@
     @include tablets {
         top: rem(-80px);
         left: auto;
-        right: 0;
+        right: rem(45px);
     }
 
     @include phones {
-        top: -37%;
+        top: 0;
+        right: 0;
     }
 }
 
@@ -173,8 +178,13 @@
         cursor: pointer;
     }
 
+    @include tablets {
+        left: rem(45px);
+    }
+
     @include phones {
-        top: -37%;
+        top: 0;
+        left: 0;
     }
 }
 
@@ -209,8 +219,8 @@
     }
 
     @include phones {
-        top: -37%;
-        width: calc(100% - 50px);
+        top: 0%;
+        width: calc(100% - 70px);
         padding-right: 50px;
     }
 }
@@ -218,6 +228,27 @@
 .burgers__composition:hover ~ .burgers__dropout {
     left: rem(90px);
     opacity: 1;
+
+    @include tablets {
+        left: rem(135px);
+    }
+
+    @include phones {
+        left: rem(90px);
+    }
+}
+
+.burgers__dropout--visible {
+    left: rem(90px);
+    opacity: 1;
+
+    @include tablets {
+        left: rem(135px);
+    }
+
+    @include phones {
+        left: rem(90px);
+    }
 }
 
 .burgers__composition-item {
