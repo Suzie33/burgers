@@ -202,8 +202,15 @@
     opacity: 0;
     transition: opacity .5s;
 
+    @include tablets {
+        width: 332px;
+        padding-right: 70px;
+    }
+
     @include phones {
         top: -37%;
+        width: calc(100% - 50px);
+        padding-right: 50px;
     }
 }
 

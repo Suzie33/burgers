@@ -1156,9 +1156,17 @@ table {
   opacity: 0;
   transition: opacity 0.5s;
 }
+@media screen and (max-width: 768px) {
+  .burgers__dropout {
+    width: 332px;
+    padding-right: 70px;
+  }
+}
 @media screen and (max-width: 480px) {
   .burgers__dropout {
     top: -37%;
+    width: calc(100% - 50px);
+    padding-right: 50px;
   }
 }
 
@@ -1459,7 +1467,23 @@ table {
   position: absolute;
   top: 30px;
   right: 30px;
-  transform: translate(50%, -50%);
+}
+@media screen and (max-width: 480px) {
+  .close-button {
+    display: block;
+  }
+}
+.close-button--dropout {
+  top: 20px;
+  right: 20px;
+}
+.close-button--dropout .close-button__img {
+  fill: #eb8262;
+}
+@media screen and (max-width: 768px) {
+  .close-button--dropout {
+    display: block;
+  }
 }
 
 .reviews__list {

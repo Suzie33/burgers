@@ -6,5 +6,20 @@
     position: absolute;
     top: 30px;
     right: 30px;
-    transform: translate(50%, -50%);
+
+    @include phones {
+        display: block;
+    }
+
+    &--dropout {
+        top: 20px;
+        right: 20px;
+
+        & .close-button__img {
+            fill: #eb8262;
+        }
+        @include tablets {
+            display: block;
+        }
+    }
 }
