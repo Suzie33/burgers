@@ -658,8 +658,8 @@ table {
 }
 .nav--hamburger .close-button {
   display: block;
-  top: 35px;
-  right: 35px;
+  top: 32px;
+  right: 32px;
 }
 
 .btn {
@@ -1456,17 +1456,10 @@ table {
   display: none;
   width: 18px;
   height: 18px;
-  background: url("../../img/close.png") no-repeat center center;
-  background-size: contain;
   position: absolute;
   top: 30px;
   right: 30px;
   transform: translate(50%, -50%);
-}
-@media screen and (max-width: 480px) {
-  .close-button {
-    display: block;
-  }
 }
 
 .reviews__list {
@@ -1723,16 +1716,25 @@ table {
   align-items: center;
 }
 
+.order__checkbox-visible__img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
 .order__checkbox-input {
   display: none;
   outline: none;
 }
-.order__checkbox-input:checked + .order__checkbox-visible {
-  background: #fff url("../../img/check.png") no-repeat center center;
+.order__checkbox-input:checked + .order__checkbox-visible .order__checkbox-visible__img {
+  display: block;
 }
 
 .order__checkbox-visible {
   display: inline-block;
+  position: relative;
   width: 0.9375rem;
   height: 0.9375rem;
   background-color: #fff;
