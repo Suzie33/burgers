@@ -5,6 +5,8 @@
 .accordeon__hidden {
     display: flex;
     height: 0;
+    transition: height .8s;
+    opacity: 0;
     width: 100%;
     overflow: hidden;
 
@@ -18,7 +20,8 @@
     margin-bottom: rem(25px);
 
     &--active .accordeon__hidden {
-        height: 100%;
+        height: 200px;
+        animation: accordeon__hidden .6s linear forwards;
     }
 
     &--active .accordeon__item-title {
@@ -30,6 +33,16 @@
         }
     }
 
+}
+
+@keyframes accordeon__hidden {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .accordeon__item-title {
@@ -104,3 +117,4 @@
     font-size: inherit;
     font-weight: 700;
 }
+

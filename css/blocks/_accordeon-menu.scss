@@ -29,7 +29,6 @@
     height: 100%; 
 
     &--active {
-        // width: 50%;
 
         @include tablets {
             flex-grow: 1;
