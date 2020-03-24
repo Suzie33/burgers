@@ -163,17 +163,27 @@ $orange: #e45028;
     align-items: center;
 }
 
+
+.order__checkbox-visible__img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
 .order__checkbox-input {
     display: none;
     outline: none;
 
-    &:checked + .order__checkbox-visible {
-        background: #fff url("../../img/check.png") no-repeat center center;
+    &:checked + .order__checkbox-visible .order__checkbox-visible__img{
+        display: block;
     }
 }
 
 .order__checkbox-visible {
     display: inline-block;
+    position: relative;
     width: rem(15px);
     height: rem(15px);
     background-color: #fff;

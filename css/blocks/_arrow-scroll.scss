@@ -9,3 +9,38 @@
     height: rem(14px);
 }
 
+.arrow-scroll--left, .arrow-scroll--right {
+    margin-bottom: 0;
+
+    & .arrow-scroll__link {
+        width: rem(15px);
+        height: rem(27px);
+    }
+
+    @include phones {
+        position: absolute;
+    }
+}
+.arrow-scroll--left {
+    margin-right: rem(20px);
+
+    & .arrow-scroll__img {
+        transform: rotate(90deg) translate(0%, 50%);
+    }
+
+    @include phones {
+        left: 2%;
+    }
+}
+
+.arrow-scroll--right {
+    margin-left: rem(19px);
+
+    & .arrow-scroll__img {
+    transform: rotate(-90deg) translate(0%, -50%);
+    }
+
+    @include phones {
+        right: 2%;
+    }
+}

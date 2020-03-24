@@ -42,4 +42,14 @@
             font-size: 55px;
         }
     }
+
+    &--burgers {
+        text-align: left;
+        line-height: 0.9;
+        color: inherit;
+
+        @include tablets {
+            text-align: center;
+        }
+    }
 }
