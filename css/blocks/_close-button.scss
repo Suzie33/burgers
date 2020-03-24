@@ -7,9 +7,9 @@
     top: 30px;
     right: 30px;
 
-    @include phones {
-        display: block;
-    }
+    // @include phones {
+    //     display: block;
+    // }
 
     &--dropout {
         top: 20px;
@@ -22,5 +22,11 @@
             display: block;
             z-index: 5;
         }
+    }
+}
+
+.accordeon-menu__item--active .close-button {
+    @include phones {
+        display: block;
     }
 }

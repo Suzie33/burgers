@@ -1407,13 +1407,25 @@ table {
   justify-content: flex-end;
 }
 
+.accordeon-menu__content {
+  padding: 0;
+  height: 100%;
+  width: 0;
+  transition: width 0.4s;
+  overflow: hidden;
+  background-color: rgba(47, 50, 52, 0.93);
+}
+
+.accordeon-menu__text {
+  font-weight: 300;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
 .accordeon-menu__item {
   display: flex;
   justify-content: flex-end;
   height: 100%;
-}
-.accordeon-menu__item--active {
-  width: 50%;
 }
 @media screen and (max-width: 768px) {
   .accordeon-menu__item--active {
@@ -1430,7 +1442,7 @@ table {
 }
 .accordeon-menu__item--active .accordeon-menu__content {
   display: block;
-  width: 100%;
+  width: 540px;
   padding: 7.7% 6.5%;
 }
 @media screen and (max-width: 480px) {
@@ -1441,6 +1453,7 @@ table {
 .accordeon-menu__item--active .accordeon-menu__text {
   max-height: 100%;
   overflow: auto;
+  animation: accordeon-menu__text 0.4s linear forwards;
 }
 .accordeon-menu__item--active .accordeon-menu__title {
   color: #f9b43b;
@@ -1455,7 +1468,6 @@ table {
 }
 .accordeon-menu__trigger:hover .accordeon-menu__title {
   color: #f9b43b;
-  transition: 0.2s;
 }
 
 .accordeon-menu__title {
@@ -1468,6 +1480,7 @@ table {
   font-size: 2.5rem;
   line-height: 1.18;
   color: #fff;
+  transition: color 0.2s;
   white-space: nowrap;
 }
 
@@ -1486,18 +1499,14 @@ table {
   background-size: cover;
 }
 
-.accordeon-menu__content {
-  padding: 0;
-  height: 100%;
-  width: 0;
-  overflow: hidden;
-  background-color: rgba(47, 50, 52, 0.93);
+@keyframes accordeon-menu__text {
+  75% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
-
-.accordeon-menu__text {
-  font-weight: 300;
-}
-
 .close-button {
   display: none;
   width: 18px;
@@ -1505,11 +1514,6 @@ table {
   position: absolute;
   top: 30px;
   right: 30px;
-}
-@media screen and (max-width: 480px) {
-  .close-button {
-    display: block;
-  }
 }
 .close-button--dropout {
   top: 20px;
@@ -1522,6 +1526,12 @@ table {
   .close-button--dropout {
     display: block;
     z-index: 5;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .accordeon-menu__item--active .close-button {
+    display: block;
   }
 }
 

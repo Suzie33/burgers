@@ -41,3 +41,31 @@ closeDropoutButton.addEventListener('click', function(event) {
 
     dropout.classList.remove('burgers__dropout--visible');
 });
+
+//////////////////////////horizontal accordeon////////////////////////
+
+const menuSection = document.querySelector('#section-menu');
+const accoItems = document.querySelectorAll('.accordeon-menu__item');
+const accoItemsLength = accoItems.length;
+
+menuSection.addEventListener('click', function() {
+    for (let i = 0; i < accoItemsLength; i++) {
+        accoItems[i].classList.remove('accordeon-menu__item--active');
+    }
+});
+
+for (let i = 0; i < accoItemsLength; i++) {
+    accoItems[i].addEventListener('click', function(event) {
+        event.stopPropagation();
+        event.preventDefault();
+
+        if(accoItems[i].classList.contains('accordeon-menu__item--active')) {
+            accoItems[i].classList.remove('accordeon-menu__item--active');
+        } else {
+            for (let i = 0; i < accoItemsLength; i++) {
+                accoItems[i].classList.remove('accordeon-menu__item--active');
+            }
+            accoItems[i].classList.add('accordeon-menu__item--active');
+        }
+    });
+}
