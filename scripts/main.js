@@ -69,3 +69,32 @@ for (let i = 0; i < accoItemsLength; i++) {
         }
     });
 }
+
+//////////////////////////vertical accordeon////////////////////////
+
+const teamSection = document.querySelector('#section-team');
+const verticalAccoItems = document.querySelectorAll('.accordeon__item');
+const verticalAccoItemsLength = verticalAccoItems.length;
+
+teamSection.addEventListener('click', function() {
+    for (let i = 0; i < verticalAccoItemsLength; i++) {
+        verticalAccoItems[i].classList.remove('accordeon__item--active');
+    }
+});
+
+for (let i = 0; i < verticalAccoItemsLength; i++) {
+    verticalAccoItems[i].addEventListener('click', function(event) {
+        event.stopPropagation();
+        event.preventDefault();
+
+        if (verticalAccoItems[i].classList.contains('accordeon__item--active')) {
+            verticalAccoItems[i].classList.remove('accordeon__item--active');
+        } else {
+            for (let i = 0; i < verticalAccoItemsLength; i++) {
+                verticalAccoItems[i].classList.remove('accordeon__item--active');
+            }
+
+            verticalAccoItems[i].classList.add('accordeon__item--active');
+        }
+    });
+}
