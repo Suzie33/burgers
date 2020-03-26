@@ -24,6 +24,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 
     position: relative;
 
@@ -34,14 +35,16 @@
 }
 
 .burgers__item {
-    display: none;
+    display: flex;
     align-items: center;
+    flex-shrink: 0;
     position: relative;
     height: 100%;
+    width: 100%;
 
-    &--visible {
-        display: flex;
-    }
+    // &--visible {
+    //     display: flex;
+    // }
 
     @include tablets {
         flex-direction: column;

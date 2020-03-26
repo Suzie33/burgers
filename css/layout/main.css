@@ -981,6 +981,7 @@ table {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
   position: relative;
 }
 @media screen and (max-width: 480px) {
@@ -991,13 +992,12 @@ table {
 }
 
 .burgers__item {
-  display: none;
+  display: flex;
   align-items: center;
+  flex-shrink: 0;
   position: relative;
   height: 100%;
-}
-.burgers__item--visible {
-  display: flex;
+  width: 100%;
 }
 @media screen and (max-width: 768px) {
   .burgers__item {

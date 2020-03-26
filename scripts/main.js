@@ -98,3 +98,27 @@ for (let i = 0; i < verticalAccoItemsLength; i++) {
         }
     });
 }
+
+/////////////////////// slider ////////////////////////////////////////
+
+const leftArrow = document.querySelector('#arrow-scroll__link-left');
+const rightArrow = document.querySelector('#arrow-scroll__link-right');
+const burgersList = document.querySelector('#burgers__list');
+
+rightArrow.addEventListener('click', function(event) {
+    loop('right', event);
+});
+
+leftArrow.addEventListener('click', function(event) {
+    loop('left', event);
+});
+
+function loop (direction, event) {
+    event.preventDefault();
+
+    if (direction === "right") {
+        burgersList.appendChild(burgersList.firstElementChild);
+    } else {
+        burgersList.insertBefore(burgersList.lastElementChild, burgersList.firstElementChild);
+    }
+}
