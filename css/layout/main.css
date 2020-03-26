@@ -980,7 +980,7 @@ table {
 .burgers__list {
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  align-items: stretch;
   overflow: hidden;
   position: relative;
 }
@@ -996,7 +996,6 @@ table {
   align-items: center;
   flex-shrink: 0;
   position: relative;
-  height: 100%;
   width: 100%;
 }
 @media screen and (max-width: 768px) {
