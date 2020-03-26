@@ -979,7 +979,7 @@ table {
 
 .burgers__list {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   overflow: hidden;
   position: relative;
@@ -1018,17 +1018,21 @@ table {
   display: flex;
   align-items: center;
   margin-right: 1.25rem;
+  padding-top: 5rem;
+  padding-bottom: 4.375rem;
 }
 @media screen and (max-width: 768px) {
   .burgers__picture {
     width: 72%;
     margin-right: 0;
     margin-bottom: 25px;
+    padding-bottom: 0;
   }
 }
 @media screen and (max-width: 480px) {
   .burgers__picture {
     width: 100%;
+    padding-top: 0;
   }
 }
 
@@ -1082,7 +1086,7 @@ table {
 .burgers__kkal {
   position: absolute;
   left: 0;
-  bottom: -4.375rem;
+  bottom: 0;
   width: 60px;
   font-family: "Gagalin";
   text-align: center;
@@ -1090,7 +1094,7 @@ table {
 }
 @media screen and (max-width: 768px) {
   .burgers__kkal {
-    top: -5rem;
+    top: 0;
     left: auto;
     right: 2.8125rem;
   }
@@ -1119,7 +1123,7 @@ table {
 
 .burgers__composition {
   position: absolute;
-  top: -5rem;
+  top: 0;
   left: 0;
   display: flex;
   flex-direction: column;
@@ -1158,7 +1162,7 @@ table {
 .burgers__dropout {
   padding: 1.25rem;
   position: absolute;
-  top: -5rem;
+  top: 0;
   width: 16.875rem;
   background-color: rgba(255, 255, 255, 0.9);
   opacity: 0.9;
