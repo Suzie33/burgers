@@ -27,20 +27,24 @@ for (let i = 0; i < navItems.length; i++) {
 
 //////////////////////////composition dropout///////////////////////////////////////
 
-const compositionIcon = document.querySelector('#burgers__composition');
-const dropout = document.querySelector('#burgers__dropout');
-const closeDropoutButton = document.querySelector('#close-dropout-button');
+// const compositionIcon = document.querySelectorAll('.burgers__composition');
+// const dropout = document.querySelectorAll('.burgers__dropout');
+// const closeDropoutButton = document.querySelectorAll('.close-button--dropout');
 
-compositionIcon.addEventListener('click', function() {
+// for (let i = 0; i < compositionIcon.length; i++) {
+//         compositionIcon[i].addEventListener('click', function() {
+            
+//         dropout[i].classList.toggle('burgers__dropout--visible');
+//     });
+// }
 
-    dropout.classList.add('burgers__dropout--visible');
-});
-
-closeDropoutButton.addEventListener('click', function(event) {
-    event.preventDefault();
-
-    dropout.classList.remove('burgers__dropout--visible');
-});
+// for (let i = 0; i < closeDropoutButton.length; i++) {
+//         closeDropoutButton[i].addEventListener('click', function(event) {
+//         event.preventDefault();
+    
+//         dropout[i].classList.remove('burgers__dropout--visible');
+//     });
+// }
 
 //////////////////////////horizontal accordeon////////////////////////
 
