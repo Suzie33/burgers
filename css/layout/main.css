@@ -826,6 +826,7 @@ table {
 
 .arrow-scroll {
   margin-bottom: 6.15%;
+  z-index: 10;
 }
 
 .arrow-scroll__link {
