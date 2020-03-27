@@ -1148,6 +1148,7 @@ table {
   .burgers__composition {
     top: 0;
     left: 0;
+    cursor: pointer;
   }
 }
 
