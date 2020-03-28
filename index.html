@@ -797,40 +797,40 @@
             <section id="section-order" class="section order">
                 <div class="container order__container">
                     <h2 class="section__title">Закажите доставку</h2>
-                    <form action="#" method="POST" class="order__form">
+                    <form action="#" method="POST" class="order__form" id="order__form">
                         <div class="order__form-group">
                             <div class="order__form-row">
                                 <label class="order__form-block">
                                     <span class="order__form-label">Имя</span>
-                                    <input type="text" class="order__form-input">
+                                    <input type="text" class="order__form-input" name="name" required>
                                 </label>
                                 <label class="order__form-block">
                                     <span class="order__form-label">Телефон</span>
-                                    <input type="tel" class="order__form-input">
+                                    <input type="tel" class="order__form-input" name="phone" required>
                                 </label>
                             </div>
                             <div class="order__form-row">
                                 <label class="order__form-block">
                                     <span class="order__form-label">Улица</span>
-                                    <input type="text" class="order__form-input">
+                                    <input type="text" class="order__form-input" name="street">
                                 </label>
                             </div>
                             <div class="order__form-row">
                                 <label class="order__form-block">
                                     <span class="order__form-label">Дом</span>
-                                    <input type="text" class="order__form-input">
+                                    <input type="text" class="order__form-input" name="building">
                                 </label>
                                 <label class="order__form-block">
                                     <span class="order__form-label">Корпус</span>
-                                    <input type="text" class="order__form-input">
+                                    <input type="text" class="order__form-input" name="housing">
                                 </label>
                                 <label class="order__form-block">
                                     <span class="order__form-label">Квартира</span>
-                                    <input type="text" class="order__form-input">
+                                    <input type="text" class="order__form-input" name="appt">
                                 </label>
                                 <label class="order__form-block">
                                     <span class="order__form-label">Этаж</span>
-                                    <input type="text" class="order__form-input">
+                                    <input type="text" class="order__form-input" name="floor">
                                 </label>
                             </div>
                         </div>
@@ -838,7 +838,7 @@
                             <div class="order__form-row">
                                 <label class="order__form-block">
                                     <span class="order__form-label">Комментарий</span>
-                                    <textarea class="order__form-textarea"></textarea>
+                                    <textarea class="order__form-textarea" name="comment" required></textarea>
                                 </label>
                             </div>
                             <div class="order__form-row order__form-row--centered">
@@ -867,7 +867,7 @@
                                 </label>
                             </div>
                             <div class="order__form-row order__form-row--centered">
-                                <input class="btn btn--margin-right" type="submit" value="Заказать">
+                                <input class="btn btn--margin-right" id="send_button" type="submit" value="Заказать">
                                 <input class="btn btn--reset" type="reset" value="Очистить">
                             </div>
                         </div>

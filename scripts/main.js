@@ -126,3 +126,48 @@ function loop (direction, event) {
         burgersList.insertBefore(burgersList.lastElementChild, burgersList.firstElementChild);
     }
 }
+
+///////////////////// order form ////////////////////////////////
+
+const myForm = document.querySelector('#order__form');
+const sendButton = document.querySelector('#send_button');
+
+sendButton.addEventListener('click', function(event) {
+    event.preventDefault();
+
+    if (validateForm(myForm)) {
+
+        const formData = new FormData(myForm);
+        formData.append('to', 'valiazin@gmail.com');
+
+        const xhr = new XMLHttpRequest();
+        xhr.responseType = 'json';
+        xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail');
+        xhr.send(formData);
+        xhr.addEventListener('load', function() {
+            if (xhr.response.status) {
+                console.log(xhr.response);
+            }
+        });
+    }
+ });
+
+ function validateForm (form) {
+    let valid = true;
+
+    if (!validateField(form.elements.name)) {
+        valid = false;
+    }
+    if (!validateField(form.elements.phone)) {
+        valid = false;
+    }
+    if (!validateField(form.elements.comment)) {
+        valid = false;
+    }
+
+    return valid;
+ }
+
+ function validateField(field) {
+     return field.checkValidity();
+ }
