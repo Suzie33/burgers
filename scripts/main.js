@@ -131,6 +131,9 @@ function loop (direction, event) {
 
 const myForm = document.querySelector('#order__form');
 const sendButton = document.querySelector('#send_button');
+const orderOverlay = document.querySelector('#order__overlay');
+const closeOverlayButton = document.querySelector('#button_close_overlay');
+const orderPopupText = document.querySelector('#order_popup_text');
 
 sendButton.addEventListener('click', function(event) {
     event.preventDefault();
@@ -142,15 +145,23 @@ sendButton.addEventListener('click', function(event) {
 
         const xhr = new XMLHttpRequest();
         xhr.responseType = 'json';
-        xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail');
+        xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail/');
         xhr.send(formData);
         xhr.addEventListener('load', function() {
-            if (xhr.response.status) {
-                console.log(xhr.response);
-            }
+            orderPopupText.textContent = xhr.response.message;
+            
+            orderOverlay.classList.add('order__overlay--visible');
+            document.body.style.overflow = 'hidden';
+
+            document.body.addEventListener('click', function() {
+                orderOverlay.classList.remove('order__overlay--visible');
+                document.body.style.overflow = 'visible';
+            });
         });
     }
  });
+
+
 
  function validateForm (form) {
     let valid = true;
