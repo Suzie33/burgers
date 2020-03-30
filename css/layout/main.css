@@ -1738,8 +1738,9 @@ table {
 }
 
 .order__form-input, .order__form-textarea {
+  position: relative;
   width: 100%;
-  padding: 0.5rem 1.3125rem;
+  padding: 0.5rem 0.6875rem;
   color: #2f3234;
   border: 2px solid transparent;
   outline: none;
@@ -1747,6 +1748,12 @@ table {
 }
 .order__form-input:focus, .order__form-textarea:focus {
   border-color: #f9b43b;
+}
+
+.order__form-error {
+  color: #e45028;
+  position: absolute;
+  font-size: 0.75rem;
 }
 
 .order__form-textarea {

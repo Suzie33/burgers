@@ -129,7 +129,7 @@
                     <ul class="burgers__list" id="burgers__list">
                         <li class="burgers__item">
                             <div class="burgers__picture">
-                                <div class="burgers__composition" onclick="">
+                                <div class="burgers__composition">
                                     <svg class="burgers__composition-icon" width="46" height="44">
                                         <use xlink:href="img/sprite.svg#burger"></use>
                                     </svg>
@@ -813,22 +813,26 @@
                                 <label class="order__form-block">
                                     <span class="order__form-label">Имя</span>
                                     <input type="text" class="order__form-input" name="name" required>
+                                    <div class="order__form-error"></div>
                                 </label>
                                 <label class="order__form-block">
                                     <span class="order__form-label">Телефон</span>
-                                    <input type="tel" class="order__form-input" name="phone" required>
+                                    <input type="tel" class="order__form-input" id="phone_input" name="phone" required>
+                                    <div class="order__form-error"></div>
                                 </label>
                             </div>
                             <div class="order__form-row">
                                 <label class="order__form-block">
                                     <span class="order__form-label">Улица</span>
-                                    <input type="text" class="order__form-input" name="street">
+                                    <input type="text" class="order__form-input" name="street" required>
+                                    <div class="order__form-error"></div>
                                 </label>
                             </div>
                             <div class="order__form-row">
                                 <label class="order__form-block">
                                     <span class="order__form-label">Дом</span>
-                                    <input type="text" class="order__form-input" name="building">
+                                    <input type="text" class="order__form-input" name="building" required>
+                                    <div class="order__form-error"></div>
                                 </label>
                                 <label class="order__form-block">
                                     <span class="order__form-label">Корпус</span>
@@ -836,7 +840,7 @@
                                 </label>
                                 <label class="order__form-block">
                                     <span class="order__form-label">Квартира</span>
-                                    <input type="text" class="order__form-input" name="appt">
+                                    <input type="text" class="order__form-input" id="appt_input" name="appt">
                                 </label>
                                 <label class="order__form-block">
                                     <span class="order__form-label">Этаж</span>

@@ -27,24 +27,33 @@ for (let i = 0; i < navItems.length; i++) {
 
 //////////////////////////composition dropout///////////////////////////////////////
 
-// const compositionIcon = document.querySelectorAll('.burgers__composition');
-// const dropout = document.querySelectorAll('.burgers__dropout');
-// const closeDropoutButton = document.querySelectorAll('.close-button--dropout');
+const burgerSection = document.querySelector('#section-burgers')
+const compositionIcon = document.querySelectorAll('.burgers__composition');
+const dropout = document.querySelectorAll('.burgers__dropout');
+const closeDropoutButton = document.querySelectorAll('.close-button--dropout');
 
-// for (let i = 0; i < compositionIcon.length; i++) {
-//         compositionIcon[i].addEventListener('click', function() {
+for (let i = 0; i < compositionIcon.length; i++) {
+        compositionIcon[i].addEventListener('click', function(event) {
+            event.stopPropagation();
+            dropout[i].classList.toggle('burgers__dropout--visible');
             
-//         dropout[i].classList.toggle('burgers__dropout--visible');
-//     });
-// }
+            burgerSection.addEventListener('click', function(event) {
+                dropout[i].classList.remove('burgers__dropout--visible');
+            });
+        });
+}
 
-// for (let i = 0; i < closeDropoutButton.length; i++) {
-//         closeDropoutButton[i].addEventListener('click', function(event) {
-//         event.preventDefault();
+for (let i = 0; i < closeDropoutButton.length; i++) {
+        closeDropoutButton[i].addEventListener('click', function(event) {
+        event.preventDefault();
     
-//         dropout[i].classList.remove('burgers__dropout--visible');
-//     });
-// }
+        dropout[i].classList.remove('burgers__dropout--visible');
+
+        
+    });
+}
+
+
 
 //////////////////////////horizontal accordeon////////////////////////
 
@@ -145,7 +154,7 @@ sendButton.addEventListener('click', function(event) {
 
         const xhr = new XMLHttpRequest();
         xhr.responseType = 'json';
-        xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail/fail');
+        xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail/');
         xhr.send(formData);
         xhr.addEventListener('load', function() {
             orderPopupText.textContent = xhr.response.message;
@@ -182,7 +191,10 @@ sendButton.addEventListener('click', function(event) {
     if (!validateField(form.elements.phone)) {
         valid = false;
     }
-    if (!validateField(form.elements.comment)) {
+    if (!validateField(form.elements.street)) {
+        valid = false;
+    }
+    if (!validateField(form.elements.building)) {
         valid = false;
     }
 
@@ -190,8 +202,44 @@ sendButton.addEventListener('click', function(event) {
  }
 
  function validateField(field) {
+     field.nextElementSibling.textContent = field.validationMessage;
      return field.checkValidity();
  }
+
+ 
+ const phoneField = document.querySelector('#phone_input');
+
+ phoneField.addEventListener('keydown', function(event) {
+    let isDijit = false;
+    let isDash = false;
+    let isPlus = false;
+    let isControls = false;
+
+    if (event.key >= 1 && event.key <= 9 || event.key === 0) {
+        isDijit = true;
+    }
+    if (event.key === '-') {
+        isDash = true;
+    }
+    if (event.key === '+') {
+        isPlus = true;
+    }
+    if (event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Backspace' || event.key === 'Delete') {
+        isControls = true;
+    }
+
+    if (!isDijit && !isDash && !isControls && !isPlus) {
+        event.preventDefault();
+    }
+});
+
+const apptField = document.querySelector('#appt_input');
+
+apptField.addEventListener('keydown', function(event) {
+    if (event.key === '-') {
+        event.preventDefault();
+    }
+});
 
  ////////////////////////////////// reviews popups ////////////////////////////////////////
 

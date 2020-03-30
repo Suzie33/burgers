@@ -78,8 +78,9 @@ $orange: #e45028;
 }
 
 .order__form-input {
+    position: relative;
     width: 100%;
-    padding: rem(8px) rem(21px);
+    padding: rem(8px) rem(11px);
 
     color: #2f3234;
     border: 2px solid transparent;
@@ -89,6 +90,12 @@ $orange: #e45028;
     &:focus {
         border-color: #f9b43b;
     }
+}
+
+.order__form-error {
+    color: $orange;
+    position: absolute;
+    font-size: rem(12px);
 }
 
 .order__form-textarea {
