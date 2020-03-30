@@ -150,18 +150,28 @@ sendButton.addEventListener('click', function(event) {
         xhr.addEventListener('load', function() {
             orderPopupText.textContent = xhr.response.message;
             
-            orderOverlay.classList.add('order__overlay--visible');
+            orderOverlay.classList.add('overlay--visible');
             document.body.style.overflow = 'hidden';
 
-            document.body.addEventListener('click', function() {
-                orderOverlay.classList.remove('order__overlay--visible');
+            closeOverlayButton.addEventListener('click', function() {
+                orderOverlay.classList.remove('overlay--visible');
                 document.body.style.overflow = 'visible';
+            });
+
+            orderOverlay.addEventListener('click', function(event) {
+                if (event.target === orderOverlay) {
+                    closeOverlayButton.click();
+                }
+            });
+
+            document.addEventListener('keydown', function(event) {
+                if (event.key === "Escape") {
+                    closeOverlayButton.click();
+                }
             });
         });
     }
  });
-
-
 
  function validateForm (form) {
     let valid = true;
@@ -182,3 +192,42 @@ sendButton.addEventListener('click', function(event) {
  function validateField(field) {
      return field.checkValidity();
  }
+
+ ////////////////////////////////// reviews popups ////////////////////////////////////////
+
+const reviews = document.querySelector('#reviews__list');
+const reviewsOverlay = document.querySelector('#reviews__overlay');
+let reviewContent = document.querySelector('#review_popup_content');
+const closePopupButton = document.querySelector('#button_close_review_popup');
+
+reviews.addEventListener('click', function(event) {
+    let element = event.target;
+
+    if (element.tagName === 'BUTTON') {
+        let modalReviewText = element.parentNode.firstElementChild.innerHTML;
+
+        reviewContent.innerHTML = modalReviewText;
+        reviewsOverlay.classList.add('overlay--visible');
+        document.body.style.overflow = 'hidden';
+    }
+
+    closePopupButton.addEventListener('click', function(event) {
+        event.preventDefault();
+    
+        reviewsOverlay.classList.remove('overlay--visible');
+        document.body.style.overflow = 'visible';
+    });
+    
+    reviewsOverlay.addEventListener('click', function(event) {
+        if (event.target === reviewsOverlay) {
+            closePopupButton.click();
+        }
+    });
+    
+    document.addEventListener('keydown', function(event) {
+        if (event.key === "Escape") {
+            closePopupButton.click();
+        }
+    });
+});
+

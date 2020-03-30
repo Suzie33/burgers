@@ -7,10 +7,6 @@
     top: 30px;
     right: 30px;
 
-    // @include phones {
-    //     display: block;
-    // }
-
     &--dropout {
         top: 20px;
         right: 20px;
@@ -28,5 +24,15 @@
 .accordeon-menu__item--active .close-button {
     @include phones {
         display: block;
+    }
+}
+
+.overlay__popup--review .close-button {
+    display: block;
+    top: 20px;
+    right: 20px;
+
+    & .close-button__img {
+        fill: #eb8262;
     }
 }
