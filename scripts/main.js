@@ -158,7 +158,11 @@ sendButton.addEventListener('click', function(event) {
         xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail');
         xhr.send(formData);
         xhr.addEventListener('load', function() {
-            orderPopupText.textContent = xhr.response.message;
+            if (xhr.response == null) {
+                orderPopupText.textContent = "Не заполнено обязательное поле"
+            } else {
+                orderPopupText.textContent = xhr.response.message;
+            }
             
             orderOverlay.classList.add('overlay--visible');
             document.body.style.overflow = 'hidden';
