@@ -8,13 +8,27 @@
     justify-content: flex-end;
 }
 
+.accordeon-menu__content {
+    padding: 0;
+    height: 100%;
+    width: 0;
+    transition: width .4s;
+    overflow: hidden;
+    background-color: rgba(47, 50, 52, 0.93);
+}
+
+.accordeon-menu__text {
+    font-weight: 300;
+    opacity: 0;
+    transition: opacity .2s;
+}
+
 .accordeon-menu__item {
     display: flex;
     justify-content: flex-end;
     height: 100%; 
 
     &--active {
-        width: 50%;
 
         @include tablets {
             flex-grow: 1;
@@ -30,7 +44,7 @@
 
     &--active .accordeon-menu__content {
         display: block;
-        width: 100%;
+        width: 540px;
         padding: 7.7% 6.5%;
 
         @include phones {
@@ -41,6 +55,7 @@
     &--active .accordeon-menu__text {
         max-height: 100%;
         overflow: auto;
+        animation: accordeon-menu__text .4s linear forwards;
     }
 
     &--active .accordeon-menu__title {
@@ -57,7 +72,6 @@
 
     &:hover .accordeon-menu__title {
         color: #f9b43b;
-        transition: 0.2s;
     }
 }
 
@@ -72,6 +86,7 @@
     font-size: rem(40px);
     line-height: 1.18;
     color: #fff;
+    transition: color .2s;
     white-space: nowrap;
 }
 
@@ -82,15 +97,12 @@
     }
 }
 
-.accordeon-menu__content {
-    padding: 0;
-    height: 100%;
-    width: 0;
-    overflow: hidden;
-    background-color: rgba(47, 50, 52, 0.93);
-}
+@keyframes accordeon-menu__text {
+    75% {
+        opacity: 0;
+    }
 
-.accordeon-menu__text {
-    font-weight: 300;
+    to {
+        opacity: 1;
+    }
 }
-

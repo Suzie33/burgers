@@ -826,6 +826,7 @@ table {
 
 .arrow-scroll {
   margin-bottom: 6.15%;
+  z-index: 10;
 }
 
 .arrow-scroll__link {
@@ -979,8 +980,9 @@ table {
 
 .burgers__list {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: stretch;
+  overflow: hidden;
   position: relative;
 }
 @media screen and (max-width: 480px) {
@@ -991,13 +993,11 @@ table {
 }
 
 .burgers__item {
-  display: none;
-  align-items: center;
-  position: relative;
-  height: 100%;
-}
-.burgers__item--visible {
   display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  position: relative;
+  width: 100%;
 }
 @media screen and (max-width: 768px) {
   .burgers__item {
@@ -1018,17 +1018,21 @@ table {
   display: flex;
   align-items: center;
   margin-right: 1.25rem;
+  padding-top: 5rem;
+  padding-bottom: 4.375rem;
 }
 @media screen and (max-width: 768px) {
   .burgers__picture {
     width: 72%;
     margin-right: 0;
     margin-bottom: 25px;
+    padding-bottom: 0;
   }
 }
 @media screen and (max-width: 480px) {
   .burgers__picture {
     width: 100%;
+    padding-top: 0;
   }
 }
 
@@ -1082,7 +1086,7 @@ table {
 .burgers__kkal {
   position: absolute;
   left: 0;
-  bottom: -4.375rem;
+  bottom: 0;
   width: 60px;
   font-family: "Gagalin";
   text-align: center;
@@ -1090,7 +1094,7 @@ table {
 }
 @media screen and (max-width: 768px) {
   .burgers__kkal {
-    top: -5rem;
+    top: 0;
     left: auto;
     right: 2.8125rem;
   }
@@ -1119,7 +1123,7 @@ table {
 
 .burgers__composition {
   position: absolute;
-  top: -5rem;
+  top: 0;
   left: 0;
   display: flex;
   flex-direction: column;
@@ -1144,6 +1148,7 @@ table {
   .burgers__composition {
     top: 0;
     left: 0;
+    cursor: pointer;
   }
 }
 
@@ -1158,7 +1163,7 @@ table {
 .burgers__dropout {
   padding: 1.25rem;
   position: absolute;
-  top: -5rem;
+  top: 0;
   width: 16.875rem;
   background-color: rgba(255, 255, 255, 0.9);
   opacity: 0.9;
@@ -1290,6 +1295,8 @@ table {
 .accordeon__hidden {
   display: flex;
   height: 0;
+  transition: height 0.8s;
+  opacity: 0;
   width: 100%;
   overflow: hidden;
 }
@@ -1304,7 +1311,8 @@ table {
   margin-bottom: 1.5625rem;
 }
 .accordeon__item--active .accordeon__hidden {
-  height: 100%;
+  height: 200px;
+  animation: accordeon__hidden 0.6s linear forwards;
 }
 .accordeon__item--active .accordeon__item-title {
   color: #f9b43b;
@@ -1314,6 +1322,14 @@ table {
   border-top: none;
 }
 
+@keyframes accordeon__hidden {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .accordeon__item-title {
   margin-bottom: 0.625rem;
   padding-left: 20px;
@@ -1407,13 +1423,25 @@ table {
   justify-content: flex-end;
 }
 
+.accordeon-menu__content {
+  padding: 0;
+  height: 100%;
+  width: 0;
+  transition: width 0.4s;
+  overflow: hidden;
+  background-color: rgba(47, 50, 52, 0.93);
+}
+
+.accordeon-menu__text {
+  font-weight: 300;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
 .accordeon-menu__item {
   display: flex;
   justify-content: flex-end;
   height: 100%;
-}
-.accordeon-menu__item--active {
-  width: 50%;
 }
 @media screen and (max-width: 768px) {
   .accordeon-menu__item--active {
@@ -1430,7 +1458,7 @@ table {
 }
 .accordeon-menu__item--active .accordeon-menu__content {
   display: block;
-  width: 100%;
+  width: 540px;
   padding: 7.7% 6.5%;
 }
 @media screen and (max-width: 480px) {
@@ -1441,6 +1469,7 @@ table {
 .accordeon-menu__item--active .accordeon-menu__text {
   max-height: 100%;
   overflow: auto;
+  animation: accordeon-menu__text 0.4s linear forwards;
 }
 .accordeon-menu__item--active .accordeon-menu__title {
   color: #f9b43b;
@@ -1455,7 +1484,6 @@ table {
 }
 .accordeon-menu__trigger:hover .accordeon-menu__title {
   color: #f9b43b;
-  transition: 0.2s;
 }
 
 .accordeon-menu__title {
@@ -1468,6 +1496,7 @@ table {
   font-size: 2.5rem;
   line-height: 1.18;
   color: #fff;
+  transition: color 0.2s;
   white-space: nowrap;
 }
 
@@ -1486,18 +1515,14 @@ table {
   background-size: cover;
 }
 
-.accordeon-menu__content {
-  padding: 0;
-  height: 100%;
-  width: 0;
-  overflow: hidden;
-  background-color: rgba(47, 50, 52, 0.93);
+@keyframes accordeon-menu__text {
+  75% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
-
-.accordeon-menu__text {
-  font-weight: 300;
-}
-
 .close-button {
   display: none;
   width: 18px;
@@ -1505,11 +1530,6 @@ table {
   position: absolute;
   top: 30px;
   right: 30px;
-}
-@media screen and (max-width: 480px) {
-  .close-button {
-    display: block;
-  }
 }
 .close-button--dropout {
   top: 20px;
@@ -1523,6 +1543,21 @@ table {
     display: block;
     z-index: 5;
   }
+}
+
+@media screen and (max-width: 480px) {
+  .accordeon-menu__item--active .close-button {
+    display: block;
+  }
+}
+
+.overlay__popup--review .close-button {
+  display: block;
+  top: 20px;
+  right: 20px;
+}
+.overlay__popup--review .close-button .close-button__img {
+  fill: #eb8262;
 }
 
 .reviews__list {
@@ -1626,6 +1661,7 @@ table {
 }
 
 .order {
+  position: relative;
   background: #161616 url("../../img/form-background.jpg") no-repeat center center;
   background-size: cover;
   color: #fff;
@@ -1702,8 +1738,9 @@ table {
 }
 
 .order__form-input, .order__form-textarea {
+  position: relative;
   width: 100%;
-  padding: 0.5rem 1.3125rem;
+  padding: 0.5rem 0.6875rem;
   color: #2f3234;
   border: 2px solid transparent;
   outline: none;
@@ -1711,6 +1748,12 @@ table {
 }
 .order__form-input:focus, .order__form-textarea:focus {
   border-color: #f9b43b;
+}
+
+.order__form-error {
+  color: #e45028;
+  position: absolute;
+  font-size: 0.75rem;
 }
 
 .order__form-textarea {
@@ -1883,4 +1926,55 @@ table {
 .socials__img:hover {
   fill: #fff;
   transition: 0.2s;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 200;
+  background-color: rgba(47, 50, 52, 0.92);
+  display: none;
+}
+.overlay--visible {
+  display: block;
+}
+
+.overlay__popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 10px;
+  width: 215px;
+  background-color: #fff;
+  border-radius: 5px;
+  color: #2f3234;
+}
+.overlay__popup--review {
+  position: relative;
+  width: 470px;
+  padding: 20px;
+}
+.overlay__popup--review h4 {
+  margin-bottom: 15px;
+  font-family: "Gagalin";
+  text-transform: uppercase;
+}
+@media screen and (max-width: 480px) {
+  .overlay__popup--review {
+    width: 95%;
+  }
+}
+
+.overlay__order-text {
+  text-align: center;
+  line-height: 1.1;
+  margin-bottom: 15px;
 }
