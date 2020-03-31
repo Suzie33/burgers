@@ -844,7 +844,7 @@
                                 </label>
                                 <label class="order__form-block">
                                     <span class="order__form-label">Этаж</span>
-                                    <input type="text" class="order__form-input" name="floor">
+                                    <input type="text" class="order__form-input" id="floor_input" name="floor">
                                 </label>
                             </div>
                         </div>
@@ -852,7 +852,8 @@
                             <div class="order__form-row">
                                 <label class="order__form-block">
                                     <span class="order__form-label">Комментарий</span>
-                                    <textarea class="order__form-textarea" name="comment" required></textarea>
+                                    <textarea class="order__form-textarea" name="comment" required>Текст комментария</textarea>
+                                    <div class="order__form-error"></div>
                                 </label>
                             </div>
                             <div class="order__form-row order__form-row--centered">
@@ -882,7 +883,7 @@
                             </div>
                             <div class="order__form-row order__form-row--centered">
                                 <input class="btn btn--margin-right" id="send_button" type="submit" value="Заказать">
-                                <input class="btn btn--reset" type="reset" value="Очистить">
+                                <input class="btn btn--reset" id="reset_button" type="reset" value="Очистить">
                             </div>
                         </div>
                     </form>

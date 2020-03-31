@@ -143,6 +143,7 @@ const sendButton = document.querySelector('#send_button');
 const orderOverlay = document.querySelector('#order__overlay');
 const closeOverlayButton = document.querySelector('#button_close_overlay');
 const orderPopupText = document.querySelector('#order_popup_text');
+const resetButton = document.querySelector('#reset_button');
 
 sendButton.addEventListener('click', function(event) {
     event.preventDefault();
@@ -154,13 +155,14 @@ sendButton.addEventListener('click', function(event) {
 
         const xhr = new XMLHttpRequest();
         xhr.responseType = 'json';
-        xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail/');
+        xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail');
         xhr.send(formData);
         xhr.addEventListener('load', function() {
             orderPopupText.textContent = xhr.response.message;
             
             orderOverlay.classList.add('overlay--visible');
             document.body.style.overflow = 'hidden';
+            resetButton.click();
 
             closeOverlayButton.addEventListener('click', function() {
                 orderOverlay.classList.remove('overlay--visible');
@@ -195,6 +197,9 @@ sendButton.addEventListener('click', function(event) {
         valid = false;
     }
     if (!validateField(form.elements.building)) {
+        valid = false;
+    }
+    if (!validateField(form.elements.comment)) {
         valid = false;
     }
 
@@ -236,7 +241,35 @@ sendButton.addEventListener('click', function(event) {
 const apptField = document.querySelector('#appt_input');
 
 apptField.addEventListener('keydown', function(event) {
-    if (event.key === '-') {
+    let isDijit = false;
+    let isControls = false;
+
+    if (event.key >= 1 && event.key <= 9 || event.key === 0) {
+        isDijit = true;
+    }
+    if (event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Backspace' || event.key === 'Delete') {
+        isControls = true;
+    }
+
+    if (!isDijit && !isControls) {
+        event.preventDefault();
+    }
+});
+
+const floorField = document.querySelector('#floor_input');
+
+floorField.addEventListener('keydown', function(event) {
+    let isDijit = false;
+    let isControls = false;
+
+    if (event.key >= 1 && event.key <= 9 || event.key === 0) {
+        isDijit = true;
+    }
+    if (event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Backspace' || event.key === 'Delete') {
+        isControls = true;
+    }
+
+    if (!isDijit && !isControls) {
         event.preventDefault();
     }
 });
