@@ -978,11 +978,14 @@ table {
   position: relative;
 }
 
+.burgers__list-wrap {
+  overflow: hidden;
+}
+
 .burgers__list {
   display: flex;
   justify-content: flex-start;
   align-items: stretch;
-  overflow: hidden;
   position: relative;
 }
 @media screen and (max-width: 480px) {
