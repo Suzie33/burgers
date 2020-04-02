@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/Suzie33/burgers#readme",
   "devDependencies": {
+    "browser-sync": "^2.26.7",
     "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
     "gulp-rm": "^2.0.0",
     "gulp-sass": "^4.0.2",
     "node-sass": "^4.13.1"
