@@ -1,0 +1,64 @@
+.btn {
+    display: inline-block;
+    padding: rem(11px) rem(16px);
+    background-color: #e45028;
+    border-radius: 5px;
+
+    font-family: "Ubuntu";
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: rem(13px);
+    line-height: 1;
+
+    color: #fff;
+    outline: none;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #c1401e;
+        transition: .3s;
+    }
+}
+
+.btn--reviews {
+    background-color: #2f3234;
+
+    &:hover {
+        background-color: #1f2122;
+        transition: .3s;
+    }
+
+    &__phones {
+        display: none;
+
+        @include phones {
+            display: inline-block;
+        }
+    }
+
+    &__default {
+        @include phones {
+            display: none;
+        }
+    }
+}
+
+.btn--margin-right {
+    margin-right: rem(5px);
+}
+
+.btn--reset {
+    background-color: transparent;
+    text-transform: unset;
+    font-weight: 300;
+
+    &:hover {
+        background-color: transparent;
+        color: #e45028;
+    }
+}
+
+.btn--order {
+    margin-bottom: 10px;
+}

@@ -1,0 +1,38 @@
+.close-button {
+    display: none;
+    width: 18px;
+    height: 18px;
+
+    position: absolute;
+    top: 30px;
+    right: 30px;
+
+    &--dropout {
+        top: 20px;
+        right: 20px;
+
+        & .close-button__img {
+            fill: #eb8262;
+        }
+        @include tablets {
+            display: block;
+            z-index: 5;
+        }
+    }
+}
+
+.accordeon-menu__item--active .close-button {
+    @include phones {
+        display: block;
+    }
+}
+
+.overlay__popup--review .close-button {
+    display: block;
+    top: 20px;
+    right: 20px;
+
+    & .close-button__img {
+        fill: #eb8262;
+    }
+}
