@@ -14,8 +14,12 @@ const sourcemaps = require('gulp-sourcemaps');
 const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
 const {SRC_PATH, DIST_PATH, STYLE_LIBS, JS_LIBS} = require('./gulp.config');
+const gulpif = require('gulp-if');
+
+const env = process.env.NODE_ENV;
 
 task( 'clean', () => {
+  console.log(env );
     return src(`${DIST_PATH}/**/*`, { read: false }) 
       .pipe( rm() )
 })
@@ -24,40 +28,47 @@ task('copy:html', () => {
   return src(`${SRC_PATH}/*.html`)
     .pipe(dest(DIST_PATH))
     .pipe(reload({ stream: true }));
- })
+})
+
+task('copy:fonts', () => {
+  return src(`${SRC_PATH}/fonts/*`)
+    .pipe(dest(`${DIST_PATH}/fonts`))
+    .pipe(reload({ stream: true }));
+})
+
+task('copy:images', () => {
+  return src(`${SRC_PATH}/img/**/*`)
+    .pipe(dest(`${DIST_PATH}/img`))
+    .pipe(reload({ stream: true }));
+})
 
 task('styles', () => {
     return src([...STYLE_LIBS, 'src/css/layout/main.scss'])
-      .pipe(sourcemaps.init())
+      .pipe(gulpif(env === 'dev', sourcemaps.init()))
       .pipe(concat('main.min.scss'))
       .pipe(sassGlob())
       .pipe(sass().on('error', sass.logError))
-      .pipe(px2rem())
+      // .pipe(px2rem())
       .pipe(autoprefixer({
         cascade: true
       }))
-      // .pipe(gcmq())
-      .pipe(cleanCSS())
-      .pipe(sourcemaps.write())
+      .pipe(gulpif(env === 'prod', gcmq()))
+      .pipe(gulpif(env === 'prod', cleanCSS()))
+      .pipe(gulpif(env === 'dev', sourcemaps.write()))
       .pipe(dest(DIST_PATH))
       .pipe(reload({ stream: true }));
 });
 
-const libs = [
-  'node_modules/jquery/dist/jquery.js',
-  'src/scripts/*.js'
- ];
-
 task('scripts', () => {
   return src([...JS_LIBS, 'src/scripts/*.js'])
-    .pipe(sourcemaps.init())
+    .pipe(gulpif(env === 'dev', sourcemaps.init()))
     .pipe(concat('main.min.js', {newLine: ';'}))
-    .pipe(babel({
+    .pipe(gulpif(env === 'prod', babel({
       presets: ['@babel/env']
-    }))
-    .pipe(uglify())
-    .pipe(sourcemaps.write())
-    .pipe(dest('DIST_PATH'))
+    })))
+    .pipe(gulpif(env === 'prod', uglify()))
+    .pipe(gulpif(env === 'dev', sourcemaps.write()))
+    .pipe(dest(DIST_PATH))
     .pipe(reload({ stream: true }));
  });
 
@@ -70,8 +81,22 @@ task('server', () => {
   });
  });
 
-watch('src/*.html', series('copy:html'));
-watch('src/css/**/*.scss', series('styles'));
-watch('src/scripts/*.js', series('scripts'));
+task('watch', () => {
+  watch('src/*.html', series('copy:html'));
+  watch('src/css/**/*.scss', series('styles'));
+  watch('src/scripts/*.js', series('scripts'));
+});
 
-task('default', series('clean', parallel('copy:html', 'styles', 'scripts'), 'server'));
+task('default', 
+  series(
+    'clean',
+     parallel('copy:html', 'copy:fonts', 'copy:images', 'styles', 'scripts'),
+     parallel('watch', 'server')
+  )
+);
+
+task('build',
+ series(
+   'clean',
+   parallel('copy:html', 'copy:fonts', 'copy:images', 'styles', 'scripts'))
+);
