@@ -13,25 +13,21 @@ const cleanCSS = require('gulp-clean-css');
 const sourcemaps = require('gulp-sourcemaps');
 const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
+const {SRC_PATH, DIST_PATH, STYLE_LIBS, JS_LIBS} = require('./gulp.config');
 
 task( 'clean', () => {
-    return src( 'dist/**/*', { read: false })
+    return src(`${DIST_PATH}/**/*`, { read: false }) 
       .pipe( rm() )
 })
 
 task('copy:html', () => {
-   return src('src/*.html')
-     .pipe(dest('dist'))
-     .pipe(reload({ stream: true }));
-})
-
-const styles = [
-    'node_modules/normalize.css/normalize.css',
-    'src/css/layout/main.scss'
-];
+  return src(`${SRC_PATH}/*.html`)
+    .pipe(dest(DIST_PATH))
+    .pipe(reload({ stream: true }));
+ })
 
 task('styles', () => {
-    return src(styles)
+    return src([...STYLE_LIBS, 'src/css/layout/main.scss'])
       .pipe(sourcemaps.init())
       .pipe(concat('main.min.scss'))
       .pipe(sassGlob())
@@ -43,7 +39,7 @@ task('styles', () => {
       // .pipe(gcmq())
       .pipe(cleanCSS())
       .pipe(sourcemaps.write())
-      .pipe(dest('dist'))
+      .pipe(dest(DIST_PATH))
       .pipe(reload({ stream: true }));
 });
 
@@ -53,7 +49,7 @@ const libs = [
  ];
 
 task('scripts', () => {
-  return src(libs)
+  return src([...JS_LIBS, 'src/scripts/*.js'])
     .pipe(sourcemaps.init())
     .pipe(concat('main.min.js', {newLine: ';'}))
     .pipe(babel({
@@ -61,7 +57,7 @@ task('scripts', () => {
     }))
     .pipe(uglify())
     .pipe(sourcemaps.write())
-    .pipe(dest('dist'))
+    .pipe(dest('DIST_PATH'))
     .pipe(reload({ stream: true }));
  });
 
@@ -74,8 +70,8 @@ task('server', () => {
   });
  });
 
-watch('src/styles/**/*.scss', series('styles'));
-watch('src/scripts/*.js', series('scripts'));
 watch('src/*.html', series('copy:html'));
+watch('src/css/**/*.scss', series('styles'));
+watch('src/scripts/*.js', series('scripts'));
 
 task('default', series('clean', 'copy:html', 'styles', 'scripts', 'server'));
