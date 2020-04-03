@@ -15,26 +15,4 @@ $desktop: 1200px;
 @import 'base';
 
 // blocks
-@import '../blocks/section';
-@import '../blocks/welcome';
-@import '../blocks/header';
-@import '../blocks/logo';
-@import '../blocks/nav';
-@import '../blocks/btn';
-@import '../blocks/hamburger-menu-link';
-@import '../blocks/page-title';
-@import '../blocks/side-nav';
-@import '../blocks/arrow-scroll';
-@import '../blocks/features';
-@import '../blocks/burgers';
-@import '../blocks/team';
-@import '../blocks/accordeon';
-@import '../blocks/menu';
-@import '../blocks/accordeon-menu';
-@import '../blocks/close-button';
-@import '../blocks/reviews';
-@import '../blocks/order';
-@import '../blocks/contacts';
-@import '../blocks/footer';
-@import '../blocks/socials';
-@import '../blocks/overlay';
+@import '../blocks/*.scss';
