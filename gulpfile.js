@@ -8,6 +8,8 @@ const reload = browserSync.reload;
 const sassGlob = require('gulp-sass-glob');
 const autoprefixer = require('gulp-autoprefixer');
 const px2rem = require('gulp-smile-px2rem');
+const gcmq = require('gulp-group-css-media-queries');
+const cleanCSS = require('gulp-clean-css');
 
 task( 'clean', () => {
     return src( 'dist/**/*', { read: false })
@@ -34,6 +36,8 @@ task('styles', () => {
       .pipe(autoprefixer({
         cascade: true
       }))
+      .pipe(gcmq())
+      .pipe(cleanCSS())
       .pipe(dest('dist'));
 });
 
