@@ -92,7 +92,7 @@
 
 @each $bg in (meat, vegan, diet) {
     .accordeon-menu__item--#{$bg} .accordeon-menu__trigger {
-        background: #000 url("../../img/menu_#{$bg}_bg.jpg") no-repeat center center;
+        background: #000 url("img/menu_#{$bg}_bg.jpg") no-repeat center center;
         background-size: cover;
     }
 }
