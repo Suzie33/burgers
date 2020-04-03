@@ -1,4 +1,4 @@
-const { src, dest, task, series, watch } = require("gulp");
+const { src, dest, task, series, watch, parallel } = require("gulp");
 const rm = require('gulp-rm');
 const sass = require('gulp-sass');
 sass.compiler = require('node-sass');
@@ -74,4 +74,4 @@ watch('src/*.html', series('copy:html'));
 watch('src/css/**/*.scss', series('styles'));
 watch('src/scripts/*.js', series('scripts'));
 
-task('default', series('clean', 'copy:html', 'styles', 'scripts', 'server'));
+task('default', series('clean', parallel('copy:html', 'styles', 'scripts'), 'server'));
