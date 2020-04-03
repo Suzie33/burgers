@@ -10,6 +10,9 @@ const autoprefixer = require('gulp-autoprefixer');
 const px2rem = require('gulp-smile-px2rem');
 const gcmq = require('gulp-group-css-media-queries');
 const cleanCSS = require('gulp-clean-css');
+const sourcemaps = require('gulp-sourcemaps');
+const babel = require('gulp-babel');
+const uglify = require('gulp-uglify');
 
 task( 'clean', () => {
     return src( 'dist/**/*', { read: false })
@@ -29,17 +32,38 @@ const styles = [
 
 task('styles', () => {
     return src(styles)
-      .pipe(concat('main.scss'))
+      .pipe(sourcemaps.init())
+      .pipe(concat('main.min.scss'))
       .pipe(sassGlob())
       .pipe(sass().on('error', sass.logError))
       .pipe(px2rem())
       .pipe(autoprefixer({
         cascade: true
       }))
-      .pipe(gcmq())
+      // .pipe(gcmq())
       .pipe(cleanCSS())
-      .pipe(dest('dist'));
+      .pipe(sourcemaps.write())
+      .pipe(dest('dist'))
+      .pipe(reload({ stream: true }));
 });
+
+const libs = [
+  'node_modules/jquery/dist/jquery.js',
+  'src/scripts/*.js'
+ ];
+
+task('scripts', () => {
+  return src(libs)
+    .pipe(sourcemaps.init())
+    .pipe(concat('main.min.js', {newLine: ';'}))
+    .pipe(babel({
+      presets: ['@babel/env']
+    }))
+    .pipe(uglify())
+    .pipe(sourcemaps.write())
+    .pipe(dest('dist'))
+    .pipe(reload({ stream: true }));
+ });
 
 task('server', () => {
    browserSync.init({
@@ -51,6 +75,7 @@ task('server', () => {
  });
 
 watch('src/styles/**/*.scss', series('styles'));
+watch('src/scripts/*.js', series('scripts'));
 watch('src/*.html', series('copy:html'));
 
-task('default', series('clean', 'copy:html', 'styles', 'server'))
+task('default', series('clean', 'copy:html', 'styles', 'scripts', 'server'));
