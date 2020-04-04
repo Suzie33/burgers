@@ -26,6 +26,11 @@
         color: #fff;
     }
 
+    &--process {
+        color: #2f3234;
+        font-size: 61px;
+    }
+
     @include tablets {
         text-align: center;
     }

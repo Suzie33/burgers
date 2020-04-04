@@ -1,0 +1,8 @@
+.process {
+    background: url('img/process-background.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.process__container {
+    @extend .features__container;
+}

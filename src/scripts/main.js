@@ -348,66 +348,108 @@
 
     /// one page scroll///
 
-    $(function() {
-        const sections = $('.section');
-        const duration = 500;
+//     $(function() {
+//         const sections = $('.section');
+//         const duration = 500;
 
-        function getActiveSection () {
-            return sections.filter('.section--active');
-        }
+//         function getActiveSection () {
+//             return sections.filter('.section--active');
+//         }
 
-        // function debounce (func, timeInMs) {
-        //     let timeout;
+//         // function debounce (func, timeInMs) {
+//         //     let timeout;
 
-        //     return function () {
-        //         const context = this;
-        //         const args = arguments;
+//         //     return function () {
+//         //         const context = this;
+//         //         const args = arguments;
 
-        //         clearTimeout(timeout);
+//         //         clearTimeout(timeout);
 
-        //         timeout = setTimeout(() => {
-        //             func.apply(context, args);
-        //         }, timeInMs)
-        //     };
-        // }
+//         //         timeout = setTimeout(() => {
+//         //             func.apply(context, args);
+//         //         }, timeInMs)
+//         //     };
+//         // }
 
-        // let onePageScroll = debounce((e) => {
+//         // let onePageScroll = debounce((e) => {
             
-        // }, 1000);
+//         // }, 1000);
 
-        $('body').on('wheel', function (e) {
-            const activeSection = getActiveSection();
-            const nextSection = activeSection.next();
-            const prevSection = activeSection.prev();
+//         $('body').on('wheel', function (e) {
+//             const activeSection = getActiveSection();
+//             const nextSection = activeSection.next();
+//             const prevSection = activeSection.prev();
 
-            if (e.originalEvent.deltaY > 0) {
-                if (nextSection.length) {
-                    $('html, body').stop(true, false).animate({
-                        scrollTop: nextSection.offset().top
-                    }, duration, function () {
-                        activeSection.removeClass('section--active');
-                        nextSection.addClass('section--active');
-                    });
-                }
+//             if (e.originalEvent.deltaY > 0) {
+//                 if (nextSection.length) {
+//                     $('html, body').stop(true, false).animate({
+//                         scrollTop: nextSection.offset().top
+//                     }, duration, function () {
+//                         activeSection.removeClass('section--active');
+//                         nextSection.addClass('section--active');
+//                     });
+//                 }
                 
-            } else {
-                if (prevSection.length) {
-                    $('html, body').stop(true, false).animate({
-                        scrollTop: prevSection.offset().top
-                    }, duration, function () {
-                        activeSection.removeClass('section--active');
-                        prevSection.addClass('section--active');
-                    });
-                }
-            }
-        });
+//             } else {
+//                 if (prevSection.length) {
+//                     $('html, body').stop(true, false).animate({
+//                         scrollTop: prevSection.offset().top
+//                     }, duration, function () {
+//                         activeSection.removeClass('section--active');
+//                         prevSection.addClass('section--active');
+//                     });
+//                 }
+//             }
+//         });
 
-        $(window).scroll(function(e) {
-            e.preventDefault();
-        })
+//         $(window).scroll(function(e) {
+//             e.preventDefault();
+//         })
+//     });
+
+////////////// youtube player /////////////////////
+
+
+})();
+
+let player;
+const playerContainer = $('.player');
+
+let eventsInit = () => {
+    $(".player__start").click(function (e) { 
+        e.preventDefault();
+
+        if(playerContainer.hasClass('player--paused')) {
+            playerContainer.removeClass('player--paused');
+            player.pauseVideo();
+        } else {
+            playerContainer.addClass('player--paused');
+            player.playVideo();
+        }
     });
-})()
+};
 
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('yt-player', {
+        height: '405',
+        width: '660',
+        videoId: 'lbmxzoi-ChY',
+        events: {
+        // 'onReady': onPlayerReady,
+        // 'onStateChange': onPlayerStateChange
+        },
+        playerVars: {
+            controls: 0,
+            disablekb: 0,
+            showinfo: 0,
+            rel: 0,
+            autoplay: 0,
+            modestbranding: 1
+        }
+    });
+}
+
+eventsInit();
 
 
 
