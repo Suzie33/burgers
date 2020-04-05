@@ -419,15 +419,30 @@ let eventsInit = () => {
     $(".player__start").click(function (e) { 
         e.preventDefault();
 
-        if(playerContainer.hasClass('player--paused')) {
-            playerContainer.removeClass('player--paused');
+        if(playerContainer.hasClass('player--active')) {
+            playerContainer.addClass('player--paused');
+            playerContainer.removeClass('player--active');
             player.pauseVideo();
         } else {
-            playerContainer.addClass('player--paused');
+            playerContainer.removeClass('player--paused');
+            playerContainer.addClass('player--active');
             player.playVideo();
         }
     });
 };
+
+$(".player__playback").on('click', e => {
+    const bar = $(e.currentTarget);
+    const clickedPosition = e.originalEvent.layerX;
+    const newButtonPositionPercent = (clickedPosition / bar.width()) * 100;
+    const newPlaybackPositionSec = (player.getDuration() / 100) * newButtonPositionPercent;
+
+    $('.player__playback-button').css({
+        left: `${newButtonPositionPercent}%`
+    });
+
+    player.seekTo(newPlaybackPositionSec);
+})
 
 const formatTime = timeSec => {
     const roundTime = Math.round(timeSec);
@@ -454,6 +469,11 @@ const onPlayerReady = () => {
 
     interval = setInterval(() => {
         const completedSec = player.getCurrentTime();
+        const completedPercent = (completedSec / durationSec) * 100;
+
+        $(".player__playback-button").css({
+            left: `${completedPercent}%`
+        });
 
         $(".player__duration-completed").text(formatTime(completedSec));
     }, 1000);
