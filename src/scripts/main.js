@@ -429,13 +429,43 @@ let eventsInit = () => {
     });
 };
 
+const formatTime = timeSec => {
+    const roundTime = Math.round(timeSec);
+
+    const minutes = addZero(Math.floor(roundTime / 60));
+    const seconds = addZero(roundTime - minutes * 60);
+
+    return `${minutes} : ${seconds}`;
+
+    function addZero(num) {
+        return num < 10 ? `0${num}` : num;
+    }
+}
+
+const onPlayerReady = () => {
+    let interval;
+    const durationSec = player.getDuration();
+
+    $('.player__duration-estimate').text(formatTime(durationSec));
+
+    if (typeof interval != "undefined") {
+        clearInterval(interval);
+    }
+
+    interval = setInterval(() => {
+        const completedSec = player.getCurrentTime();
+
+        $(".player__duration-completed").text(formatTime(completedSec));
+    }, 1000);
+};
+
 function onYouTubeIframeAPIReady() {
     player = new YT.Player('yt-player', {
         height: '405',
         width: '660',
         videoId: 'lbmxzoi-ChY',
         events: {
-        // 'onReady': onPlayerReady,
+        'onReady': onPlayerReady,
         // 'onStateChange': onPlayerStateChange
         },
         playerVars: {
