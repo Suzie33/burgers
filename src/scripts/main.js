@@ -440,6 +440,18 @@ $(".player__playback").on('click', e => {
     player.seekTo(newPlaybackPositionSec);
 })
 
+$(".player__volume-scale").on('click', e => {
+    const bar = $(e.currentTarget);
+    const clickedPosition = e.originalEvent.layerX;
+    const newButtonPositionPercent = (clickedPosition / bar.width()) * 100;
+
+    $('.player__volume-button').css({
+        left: `${newButtonPositionPercent}%`
+    });
+
+    player.setVolume(newButtonPositionPercent);
+})
+
 $('.player__splash').on('click', e => {
     player.playVideo();
 })

@@ -117,3 +117,47 @@
     cursor: pointer;
     z-index: 10;
 }
+
+.player__volume {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.player__volume-icon {
+    fill: #626262;
+    margin-right: 19px;
+}
+
+.player__volume-scale {
+    position: relative;
+    height: 16px;
+    width: 58px;
+    cursor: pointer;
+
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        height: 4px;
+        transform: translateY(-50%);
+
+        background-color: #626262;
+    }
+}
+
+.player__volume-button {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #626262;
+}
