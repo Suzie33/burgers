@@ -10,19 +10,19 @@
         event.preventDefault();
         
         nav.classList.add('nav--hamburger');
-        document.body.style.overflow = 'hidden';
+        $('.wrapper__content').addClass('restrict-scrolling');
     });
 
     closeNavButton.addEventListener ('click', function(event) {
         event.preventDefault();
 
         nav.classList.remove('nav--hamburger');
-        document.body.style.overflow = 'visible';
+        $('.wrapper__content').removeClass('restrict-scrolling');
     });
 
     for (let i = 0; i < navItems.length; i++) {
         navItems[i].addEventListener('click', function() {
-            document.body.style.overflow = 'visible';
+            $('.wrapper__content').removeClass('restrict-scrolling');
         });
     }
 
@@ -53,8 +53,6 @@
             
         });
     }
-
-
 
     //////////////////////////horizontal accordeon////////////////////////
 
@@ -142,12 +140,12 @@
                 }
                 
                 orderOverlay.classList.add('overlay--visible');
-                document.body.style.overflow = 'hidden';
+                display.classList.add('restrict-scrolling');
                 resetButton.click();
 
                 closeOverlayButton.addEventListener('click', function() {
                     orderOverlay.classList.remove('overlay--visible');
-                    document.body.style.overflow = 'visible';
+                    display.classList.remove('restrict-scrolling');
                 });
 
                 orderOverlay.addEventListener('click', function(event) {
@@ -270,16 +268,14 @@
 
             reviewContent.innerHTML = modalReviewText;
             reviewsOverlay.classList.add('overlay--visible');
-            // document.body.style.overflow = 'hidden';
-            document.body.style.height = '100vh';
+            $('.wrapper__content').addClass('restrict-scrolling');
         }
 
         closePopupButton.addEventListener('click', function(event) {
             event.preventDefault();
         
             reviewsOverlay.classList.remove('overlay--visible');
-            document.body.style.overflow = 'visible';
-            document.body.style.height = 'auto';
+            $('.wrapper__content').removeClass('restrict-scrolling');
         });
         
         reviewsOverlay.addEventListener('click', function(event) {
@@ -353,10 +349,14 @@
     const sections = $('.section');
     const display = $('.wrapper__content');
     const fixedNavItems = $('.side-nav__item');
+    let isRestrictedScroll = display.hasClass('restrict-scrolling');
 
     let inScroll = false;
 
     const performTransition = sectionEq => {
+        if (display.hasClass('restrict-scrolling')) {
+            return;
+        }
         if (inScroll === false) {
             inScroll = true;
 
@@ -506,7 +506,7 @@ video.get(0).onplay = function() {
         $(".player__playback-button").css({
             left: `${completedPercent}%`
         });
-        
+
     }, 1000);
 }
 
