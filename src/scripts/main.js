@@ -423,11 +423,26 @@
         performTransition(target);
     });
 
-    $("body").swipe({
-        swipe: (event, direction) => {
-            alert(direction);
-        }
-    })
+    const md = new MobileDetect(window.navigator.userAgent);
+    const isMobile = md.mobile();
+
+    if (isMobile) {
+        $("body").swipe({
+            swipe: (event, direction) => {
+                let scrollDirection;
+    
+                if (direction === "up") {
+                    scrollDirection = "next";
+                }
+                if (direction === "down") {
+                    scrollDirection = "prev";
+                }
+    
+                scrollSection(scrollDirection);
+            }
+        })
+    }
+    
 })();
 
 ////////////// youtube player /////////////////////
