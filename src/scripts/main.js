@@ -351,14 +351,24 @@
     const sections = $('.section');
     const display = $('.wrapper__content');
 
+    let inScroll = false;
+
     const performtransition = sectionEq => {
-        const position = sectionEq * -100;
+        if (inScroll === false) {
+            inScroll = true;
 
-        sections.eq(sectionEq).addClass('section--active').siblings().removeClass('section--active');
+            const position = sectionEq * -100;
 
-        display.css({
-            transform: `translateY(${position}%)`
-        });
+            sections.eq(sectionEq).addClass('section--active').siblings().removeClass('section--active');
+
+            display.css({
+                transform: `translateY(${position}%)`
+            });
+
+            $(display).on('transitionend', e => {
+                inScroll = false;
+            })
+        }
     }
 
     const scrollSection = direction => {
