@@ -2,39 +2,39 @@
     position: relative;
     display: block;
     color: #626262;
-    // width: 100%;
-    // height: 100%;
+
+    @include tablets {
+        width: 99%;
+    }
 
     &--active .player__splash{
         display: none;
     }
 
-    &--paused {
-        .player__start {
-            width: 14px;
-            height: 20px;
-            border: none;
-            position: relative;
-            background: none;
+    &--active .player__start {
+        width: 14px;
+        height: 20px;
+        border: none;
+        position: relative;
+        background: none;
 
-            &::after,
-            &::before {
-                content: "";
-                display: block;
-                position: absolute;
-                width: 5px;
-                top: 0;
-                bottom: 0;
-                background: #626262;
-            }
+        &::after,
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 5px;
+            top: 0;
+            bottom: 0;
+            background: #626262;
+        }
 
-            &::after {
-                right: 0;
-            }
+        &::after {
+            right: 0;
+        }
 
-            &::before {
-                left: 0;
-            }
+        &::before {
+            left: 0;
         }
     }
 }
@@ -44,9 +44,17 @@
     text-align: center;
 }
 
+.player__video {
+    width: 660px;
+
+    @include tablets {
+        width: 100%;
+    }
+}
+
 .player__controls {
     position: absolute;
-    bottom: -10px;
+    bottom: -25px;
     left: 0;
     right: 0;
     height: 35px;
@@ -54,7 +62,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 25px;
+    padding: 0 rem(25px);
     z-index: 100;
 }
 
@@ -64,6 +72,10 @@
     height: 22px;
     background: url('img/icons/play.svg') no-repeat center center;
     cursor: pointer;
+
+    @include phones {
+        margin-right: 14px;
+    }
 }
 
 .player__start-img {
@@ -76,6 +88,10 @@
     height: 16px;
     width: 445px;
     cursor: pointer;
+
+    @include phones {
+        width: 100%;
+    }
 
     &::before {
         content: "";
@@ -122,6 +138,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include phones {
+        display: none;
+    }
 }
 
 .player__volume-icon {

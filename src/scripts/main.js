@@ -449,129 +449,79 @@
 
 ////////////// youtube player /////////////////////
 
-let player;
+const video = $('.player__video');
 const playerContainer = $('.player');
 
-let eventsInit = () => {
-    $(".player__start").click(function (e) { 
-        e.preventDefault();
+function playVideo() {
+    video.get(0).play();
+    playerContainer.addClass("player--active");
+    playerContainer.removeClass('player--paused');
+}
 
-        if(playerContainer.hasClass('player--active')) {
-            player.pauseVideo();
-        } else {
-            player.playVideo();
-        }
-    });
-};
+function pauseVideo() {
+    video.get(0).pause();
+    playerContainer.addClass('player--paused');
+    playerContainer.removeClass("player--active");
+}
+
+$('.player__start').on('click', e => {
+    e.preventDefault();
+
+    if (playerContainer.hasClass('player--active')) {
+        pauseVideo();
+    } else {
+        playVideo();
+    }
+});
+
+$('.player__splash').on('click', e => {
+        playVideo();
+});
 
 $(".player__playback").on('click', e => {
     const bar = $(e.currentTarget);
     const clickedPosition = e.originalEvent.layerX;
     const newButtonPositionPercent = (clickedPosition / bar.width()) * 100;
-    const newPlaybackPositionSec = (player.getDuration() / 100) * newButtonPositionPercent;
+    const newPlaybackPositionSec = (video.get(0).duration / 100) * newButtonPositionPercent;
 
     $('.player__playback-button').css({
         left: `${newButtonPositionPercent}%`
     });
 
-    player.seekTo(newPlaybackPositionSec);
-})
+    video.get(0).currentTime = newPlaybackPositionSec;
+});
 
-$(".player__volume-scale").on('click', e => {
-    const bar = $(e.currentTarget);
-    const clickedPosition = e.originalEvent.layerX;
-    const newButtonPositionPercent = (clickedPosition / bar.width()) * 100;
-
-    $('.player__volume-button').css({
-        left: `${newButtonPositionPercent}%`
-    });
-
-    player.setVolume(newButtonPositionPercent);
-})
-
-$('.player__splash').on('click', e => {
-    player.playVideo();
-})
-
-const formatTime = timeSec => {
-    const roundTime = Math.round(timeSec);
-
-    const minutes = addZero(Math.floor(roundTime / 60));
-    const seconds = addZero(roundTime - minutes * 60);
-
-    return `${minutes} : ${seconds}`;
-
-    function addZero(num) {
-        return num < 10 ? `0${num}` : num;
-    }
-}
-
-const onPlayerReady = () => {
+video.get(0).onplay = function() {
     let interval;
-    const durationSec = player.getDuration();
-
-    $('.player__duration-estimate').text(formatTime(durationSec));
+    const durationSec = video.get(0).duration;
 
     if (typeof interval != "undefined") {
         clearInterval(interval);
     }
 
     interval = setInterval(() => {
-        const completedSec = player.getCurrentTime();
+        const completedSec = video.get(0).currentTime;
         const completedPercent = (completedSec / durationSec) * 100;
 
         $(".player__playback-button").css({
             left: `${completedPercent}%`
         });
-
-        $(".player__duration-completed").text(formatTime(completedSec));
+        
     }, 1000);
-};
-
-const onPlayerStateChange = event => {
-    /* 
-    -1 (воспроизведение видео не начато)
-    0 (воспроизведение видео завершено)
-    1 (воспроизведение)
-    2 (пауза)
-    3 (буферизация)
-    5 (видео подают реплики).
-    */
-
-    switch (event.data) {
-        case 1:
-            playerContainer.addClass('player--active');
-            playerContainer.removeClass('player--paused');
-            break;
-
-        case 2:
-            playerContainer.removeClass('player--active');
-            playerContainer.addClass('player--paused');
-            break;
-    }
 }
 
-function onYouTubeIframeAPIReady() {
-    player = new YT.Player('yt-player', {
-        height: '405',
-        width: '660',
-        videoId: 'lbmxzoi-ChY',
-        events: {
-        'onReady': onPlayerReady,
-        'onStateChange': onPlayerStateChange
-        },
-        playerVars: {
-            controls: 0,
-            disablekb: 0,
-            showinfo: 0,
-            rel: 0,
-            autoplay: 0,
-            modestbranding: 1
-        }
+$(".player__volume-scale").on('click', e => {
+    const bar = $(e.currentTarget);
+    const clickedPosition = e.originalEvent.layerX;
+    const newButtonPosition = clickedPosition / bar.width();
+    const newButtonPositionPercent = newButtonPosition * 100;
+
+    $('.player__volume-button').css({
+        left: `${newButtonPositionPercent}%`
     });
-}
 
-eventsInit();
+    video.get(0).volume = newButtonPosition;
+})
 
 ////////// map ////////////
 
