@@ -50,14 +50,14 @@
         border-radius: 50%;
 
         opacity: 0;
+        transition: .3s;
     }
 
     &:hover::before {
         opacity: 1;
-        transition: .3s;
     }
 }
 
-.side-nav__link--active::before {
+.side-nav__item--active .side-nav__link::before {
     opacity: 1;
 }

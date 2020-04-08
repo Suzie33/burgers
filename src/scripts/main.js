@@ -350,6 +350,7 @@
 
     const sections = $('.section');
     const display = $('.wrapper__content');
+    const fixedNavItems = $('.side-nav__item');
 
     let inScroll = false;
 
@@ -360,6 +361,7 @@
             const position = sectionEq * -100;
 
             sections.eq(sectionEq).addClass('section--active').siblings().removeClass('section--active');
+            fixedNavItems.eq(sectionEq).addClass('side-nav__item--active').siblings().removeClass('side-nav__item--active');
 
             display.css({
                 transform: `translateY(${position}%)`
@@ -420,6 +422,12 @@
 
         performTransition(target);
     });
+
+    $("body").swipe({
+        swipe: (event, direction) => {
+            alert(direction);
+        }
+    })
 })();
 
 ////////////// youtube player /////////////////////
