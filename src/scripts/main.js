@@ -348,69 +348,47 @@
 
     /// one page scroll///
 
-//     $(function() {
-//         const sections = $('.section');
-//         const duration = 500;
+    const sections = $('.section');
+    const display = $('.wrapper__content');
 
-//         function getActiveSection () {
-//             return sections.filter('.section--active');
-//         }
+    const performtransition = sectionEq => {
+        const position = sectionEq * -100;
 
-//         // function debounce (func, timeInMs) {
-//         //     let timeout;
+        sections.eq(sectionEq).addClass('section--active').siblings().removeClass('section--active');
 
-//         //     return function () {
-//         //         const context = this;
-//         //         const args = arguments;
+        display.css({
+            transform: `translateY(${position}%)`
+        });
+    }
 
-//         //         clearTimeout(timeout);
+    const scrollSection = direction => {
+        const activeSection = sections.filter('.section--active');
+        const nextSection = activeSection.next('.section');
+        const prevSection = activeSection.prev('.section');
 
-//         //         timeout = setTimeout(() => {
-//         //             func.apply(context, args);
-//         //         }, timeInMs)
-//         //     };
-//         // }
+        if (direction === 'next' && nextSection.length) {
+            performtransition(nextSection.index());
+        }
 
-//         // let onePageScroll = debounce((e) => {
-            
-//         // }, 1000);
+        if (direction === 'prev' && prevSection.length) {
+            performtransition(prevSection.index());
+        }
+    }
 
-//         $('body').on('wheel', function (e) {
-//             const activeSection = getActiveSection();
-//             const nextSection = activeSection.next();
-//             const prevSection = activeSection.prev();
+    $(window).on('wheel', e => {
+        const deltaY = e.originalEvent.deltaY;
 
-//             if (e.originalEvent.deltaY > 0) {
-//                 if (nextSection.length) {
-//                     $('html, body').stop(true, false).animate({
-//                         scrollTop: nextSection.offset().top
-//                     }, duration, function () {
-//                         activeSection.removeClass('section--active');
-//                         nextSection.addClass('section--active');
-//                     });
-//                 }
-                
-//             } else {
-//                 if (prevSection.length) {
-//                     $('html, body').stop(true, false).animate({
-//                         scrollTop: prevSection.offset().top
-//                     }, duration, function () {
-//                         activeSection.removeClass('section--active');
-//                         prevSection.addClass('section--active');
-//                     });
-//                 }
-//             }
-//         });
+        if (deltaY > 0) {
+            scrollSection('next');
+        }
 
-//         $(window).scroll(function(e) {
-//             e.preventDefault();
-//         })
-//     });
+        if (deltaY < 0) {
+            scrollSection('prev');
+        }
+    });
+})();
 
 ////////////// youtube player /////////////////////
-
-
-})();
 
 let player;
 const playerContainer = $('.player');
