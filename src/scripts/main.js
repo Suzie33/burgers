@@ -270,7 +270,8 @@
 
             reviewContent.innerHTML = modalReviewText;
             reviewsOverlay.classList.add('overlay--visible');
-            document.body.style.overflow = 'hidden';
+            // document.body.style.overflow = 'hidden';
+            document.body.style.height = '100vh';
         }
 
         closePopupButton.addEventListener('click', function(event) {
@@ -278,6 +279,7 @@
         
             reviewsOverlay.classList.remove('overlay--visible');
             document.body.style.overflow = 'visible';
+            document.body.style.height = 'auto';
         });
         
         reviewsOverlay.addEventListener('click', function(event) {
