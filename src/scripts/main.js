@@ -349,7 +349,6 @@
     const sections = $('.section');
     const display = $('.wrapper__content');
     const fixedNavItems = $('.side-nav__item');
-    let isRestrictedScroll = display.hasClass('restrict-scrolling');
 
     let inScroll = false;
 
