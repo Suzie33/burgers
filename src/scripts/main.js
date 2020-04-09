@@ -4,7 +4,7 @@
     const hamburger = document.querySelector('#hamburger-menu-link');
     const nav = document.querySelector('#main-nav');
     const closeNavButton = document.querySelector('#close-nav-button');
-    const navItems = document.querySelectorAll('.nav__item');
+    const navLinks = document.querySelectorAll('.nav__link');
 
     hamburger.addEventListener('click', function (event) {
         event.preventDefault();
@@ -20,9 +20,10 @@
         $('.wrapper__content').removeClass('restrict-scrolling');
     });
 
-    for (let i = 0; i < navItems.length; i++) {
-        navItems[i].addEventListener('click', function() {
+    for (let i = 0; i < navLinks.length; i++) {
+        navLinks[i].addEventListener('click', function() {
             $('.wrapper__content').removeClass('restrict-scrolling');
+            nav.classList.remove('nav--hamburger');
         });
     }
 
