@@ -428,7 +428,7 @@
     const isMobile = md.mobile();
 
     if (isMobile) {
-        $("body").swipe({
+        $(".wrapper__content").swipe({
             swipe: (event, direction) => {
                 let scrollDirection;
     
