@@ -22,7 +22,7 @@
     &--menu {
         position: absolute;
         left: 8.6%;
-        top: 13.8%;
+        top: 14.8%;
         color: #fff;
     }
 
@@ -50,6 +50,10 @@
         @include phones {
             margin-bottom: 45px;
         }
+    }
+
+    &--order {
+        margin-bottom: 35px;
     }
 
     &--burgers {

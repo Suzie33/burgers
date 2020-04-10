@@ -17,10 +17,10 @@
 }
 
 .accordeon__item {
-    margin-bottom: rem(25px);
+    margin-bottom: rem(14px);
 
     &--active .accordeon__hidden {
-        height: 200px;
+        height: 130px;
         animation: accordeon__hidden .6s linear forwards;
     }
 
@@ -32,7 +32,6 @@
             border-top: none;
         }
     }
-
 }
 
 @keyframes accordeon__hidden {
@@ -104,7 +103,7 @@
 }
 
 .accordeon__desc {
-    width: 50%;
+    width: 60%;
 
     @include phones {
         width: 80%;
