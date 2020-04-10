@@ -1,12 +1,13 @@
 .features {
     background: url('img/features-background.jpg') no-repeat center center;
     background-size: cover;
+    padding-top: 11%;
 }
 
 .features__container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     height: 100%;
 }
