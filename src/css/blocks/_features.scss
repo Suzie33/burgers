@@ -1,17 +1,17 @@
 .features {
     background: url('img/features-background.jpg') no-repeat center center;
     background-size: cover;
-    padding-top: 11%;
+    padding-bottom: rem(38px);
 
     @include tablets {
-        padding-top: 0;
+        padding-bottom: 0;
     }
 }
 
 .features__container {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     height: 100%;
 }

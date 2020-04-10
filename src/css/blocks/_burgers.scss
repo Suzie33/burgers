@@ -100,6 +100,7 @@
 
 .burgers__text p {
     font-weight: 300;
+    margin-bottom: 10px;
 
     @include phones {
         width: 100%;

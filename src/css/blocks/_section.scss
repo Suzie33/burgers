@@ -12,7 +12,7 @@
     font-size: 72px;
     line-height: 1.18;
     color: #f9b43b;
-    margin-bottom: rem(40px);
+    margin-bottom: rem(35px);
     
     &--features {
         color: #2f3234;
@@ -48,12 +48,8 @@
         font-size: 61px;
 
         @include phones {
-            margin-bottom: 45px;
+            margin-bottom: rem(45px);
         }
-    }
-
-    &--order {
-        margin-bottom: 35px;
     }
 
     &--burgers {
