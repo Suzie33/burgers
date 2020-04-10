@@ -65,8 +65,7 @@
     display: flex;
     align-items: center;
     margin-right: rem(20px);
-    padding-top: rem(80px);
-    padding-bottom: rem(70px);
+    padding: 70px 0;
 
     @include tablets {
         width: 72%;
@@ -290,5 +289,5 @@
 .burgers__info {
     display: flex;
     align-items: flex-end;
-    justify-content: center;
+    justify-content: flex-start;
 }

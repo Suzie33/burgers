@@ -2,6 +2,10 @@
     background: url('img/features-background.jpg') no-repeat center center;
     background-size: cover;
     padding-top: 11%;
+
+    @include tablets {
+        padding-top: 0;
+    }
 }
 
 .features__container {
