@@ -15,10 +15,12 @@
 
 .welcome__content {
     display: flex;
+    margin-bottom: rem(84px);
 
     @include tablets {
         flex-direction: column;
         align-items: center;
+        margin-bottom: 0;
     }
 }
 
