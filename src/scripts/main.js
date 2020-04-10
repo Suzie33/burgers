@@ -136,17 +136,19 @@
             xhr.addEventListener('load', function() {
                 if (xhr.response == null) {
                     orderPopupText.textContent = "Не заполнено обязательное поле"
+                } else if (xhr.status >= 400) {
+                    orderPopupText.textContent = "Ошибка сервера"
                 } else {
                     orderPopupText.textContent = xhr.response.message;
                 }
                 
                 orderOverlay.classList.add('overlay--visible');
-                display.classList.add('restrict-scrolling');
+                $('.wrapper__content').addClass('restrict-scrolling');
                 resetButton.click();
 
                 closeOverlayButton.addEventListener('click', function() {
                     orderOverlay.classList.remove('overlay--visible');
-                    display.classList.remove('restrict-scrolling');
+                    $('.wrapper__content').removeClass('restrict-scrolling');
                 });
 
                 orderOverlay.addEventListener('click', function(event) {
