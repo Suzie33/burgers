@@ -70,6 +70,7 @@
     padding: 0;
     width: 16px;
     height: 22px;
+    flex-shrink: 0;
     background: url('img/icons/play.svg') no-repeat center center;
     cursor: pointer;
 
@@ -90,7 +91,7 @@
     cursor: pointer;
 
     @include phones {
-        width: 100%;
+        margin-right: 15px;
     }
 
     &::before {
@@ -143,15 +144,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    @include phones {
-        display: none;
-    }
 }
 
 .player__volume-icon {
     fill: #626262;
     margin-right: 19px;
+    cursor: pointer;
 }
 
 .player__volume-scale {

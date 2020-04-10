@@ -191,7 +191,6 @@
         return field.checkValidity();
     }
 
-    
     const phoneField = document.querySelector('#phone_input');
 
     phoneField.addEventListener('keydown', function(event) {
@@ -340,7 +339,6 @@
                 } else {
                     moveSlide(burgersItems.last().index());
                 }
-                
             }
         });
     });
@@ -508,7 +506,7 @@ video.get(0).onplay = function() {
         });
 
     }, 1000);
-}
+};
 
 $(".player__volume-scale").on('click', e => {
     const bar = $(e.currentTarget);
@@ -521,6 +519,14 @@ $(".player__volume-scale").on('click', e => {
     });
 
     video.get(0).volume = newButtonPosition;
+});
+
+$('.player__volume-icon').on('click', e => {
+    if (video.get(0).muted) {
+        video.get(0).muted = false;
+    } else {
+        video.get(0).muted = true;
+    }
 })
 
 ////////// map ////////////
