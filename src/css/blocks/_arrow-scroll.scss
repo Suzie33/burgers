@@ -23,7 +23,7 @@
     }
 }
 .arrow-scroll--left {
-    margin-right: rem(20px);
+    margin-left: 25px;
 
     & .arrow-scroll__img {
         transform: rotate(90deg) translate(0%, 50%);
@@ -35,7 +35,7 @@
 }
 
 .arrow-scroll--right {
-    margin-left: rem(19px);
+    margin-right: 25px;
 
     & .arrow-scroll__img {
     transform: rotate(-90deg) translate(0%, -50%);

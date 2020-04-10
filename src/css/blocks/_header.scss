@@ -4,4 +4,9 @@
     align-items: center;
 
     padding-top: rem(12px);
+
+    @include tablets {
+        padding-left: 15px;
+        padding-right: 20px;
+    }
 }

@@ -4,7 +4,7 @@
     padding-bottom: rem(38px);
 
     @include tablets {
-        padding-bottom: 0;
+        padding-bottom: rem(160px);
     }
 }
 
@@ -40,6 +40,11 @@
 .features__icon {
     height: rem(89px);
     margin-bottom: rem(25px);
+
+    @include tablets {
+        margin-bottom: rem(60px);
+    }
+
     @include phones {
         flex-shrink: 0;
         width: 97px;

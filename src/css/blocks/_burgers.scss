@@ -68,6 +68,7 @@
     padding: 70px 0;
 
     @include tablets {
+        position: relative;
         width: 72%;
         margin-right: 0;
         margin-bottom: 25px;
@@ -141,7 +142,7 @@
     @include tablets {
         top: 0;
         left: auto;
-        right: rem(45px);
+        right: 0;
     }
 
     @include phones {
@@ -185,10 +186,6 @@
     &:hover {
         background-color: #e35028;
         cursor: pointer;
-    }
-
-    @include tablets {
-        left: rem(45px);
     }
 
     @include phones {
@@ -291,4 +288,8 @@
     display: flex;
     align-items: flex-end;
     justify-content: flex-start;
+
+    @include tablets {
+        justify-content: center;
+    }
 }
