@@ -1,0 +1,14 @@
+.process {
+    background: url('img/process-background.jpg') no-repeat center center;
+    background-size: cover;
+    padding-bottom: rem(28px);
+
+    @include tablets {
+        padding-bottom: rem(75px);
+    }
+}
+
+.process__container {
+    @extend .features__container;
+    justify-content: center;
+}

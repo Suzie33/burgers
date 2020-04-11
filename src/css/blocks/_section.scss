@@ -1,0 +1,87 @@
+.section {
+    height: 100%;
+    min-height: 650px;
+
+    @include phones {
+        min-height: 568px;
+    }
+}
+
+.section__title {
+    font-family: "Gagalin", sans-serif;
+    font-size: 72px;
+    line-height: 1.18;
+    color: #f9b43b;
+    margin-bottom: rem(35px);
+    
+    &--menu {
+        position: absolute;
+        left: 8.6%;
+        top: 14.8%;
+        color: #fff;
+
+        @include tablets {
+            left: 3%;
+            top: 9.8%;
+        }
+    }
+
+    @include tablets {
+        text-align: center;
+    }
+
+    @include phones {
+        font-size: 50px;
+        margin-bottom: 10px;
+    }
+
+    &--welcome {
+        margin-bottom: rem(15px);
+
+        @include phones {
+            font-size: 55px;
+        }
+    }
+
+    &--features {
+        color: #2f3234;
+        text-align: center;
+
+        @include phones {
+            margin-bottom: rem(35px);
+        }
+    }
+    
+    &--process {
+        color: #2f3234;
+        font-size: 61px;
+
+        @include tablets {
+            margin-bottom: rem(60px);
+        }
+
+        @include phones {
+            margin-bottom: rem(45px);
+        }
+    }
+
+    &--burgers {
+        text-align: left;
+        line-height: 0.9;
+        color: inherit;
+
+        @include tablets {
+            text-align: center;
+        }
+    }
+
+    &--order {
+        @include tablets {
+            margin-bottom: rem(58px);
+        }
+
+        @include phones {
+            margin-bottom: 10px;
+        }
+    }
+}

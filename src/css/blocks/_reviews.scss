@@ -1,0 +1,99 @@
+.reviews__list {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+.reviews__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+}
+
+.reviews__card {
+    padding: 16% 11% 14.5% 7.27%;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+
+    color: #fff;
+
+    opacity: 0;
+    transform: scale(0.8);
+
+    @include tablets {
+        padding: 6.5% 11%;
+        text-align: center;
+    }
+
+    @include phones {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.reviews__card h4 {
+    margin-bottom: 7.27%;
+    font-family: "Gagalin";
+    text-transform: uppercase;
+
+    @include tablets {
+        margin-bottom: 3.5%;
+    }
+
+    @include phones {
+        font-size: 24px;
+        line-height: 1.2;
+        margin-bottom: 12%;
+    }
+}
+
+.reviews__card p {
+    margin-bottom: 5%;
+    font-weight: 300;
+
+    @include phones {
+        display: none;
+    }
+}
+
+.reviews__item {
+    position: relative;
+    width: calc(100% / 4);
+    height: 50%;
+
+    @include tablets {
+        width: 50%;
+        height: 25%;
+    }
+
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+        background-color: rgba(20, 20, 20, 0.7);
+        opacity: 0;
+    }
+
+    &:hover .reviews__card {
+        opacity: 1;
+        transform: scale(1);
+        transition: 0.3s;
+    }
+
+    &:hover::after {
+        opacity: 1;
+        transition: .3s;
+    }
+}

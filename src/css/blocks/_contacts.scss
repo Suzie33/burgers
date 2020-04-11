@@ -1,0 +1,22 @@
+.contacts {
+    position: relative;
+}
+
+.contacts__map {
+    width: 100%;
+    height: 100%;
+
+}
+
+.contacts__text {
+    font-style: normal;
+
+    @include phones {
+        margin-bottom: 14px;
+    }
+}
+
+.contacts__tel {
+    font-weight: 700;
+    color: #e45028;
+}

@@ -1,0 +1,49 @@
+.arrow-scroll {
+    margin-bottom: 5%;
+    z-index: 10;
+}
+
+.arrow-scroll__link {
+    display: block;
+    margin: 0 auto;
+    width: rem(29px);
+    height: rem(14px);
+}
+
+.arrow-scroll--left, .arrow-scroll--right {
+    margin-bottom: 0;
+
+    & .arrow-scroll__link {
+        width: rem(15px);
+        height: rem(27px);
+    }
+
+    @include phones {
+        position: absolute;
+    }
+}
+.arrow-scroll--left {
+    margin-left: 25px;
+
+    & .arrow-scroll__img {
+        transform: rotate(90deg) translate(0%, 50%);
+    }
+
+    @include phones {
+        left: 2%;
+        margin-left: 0;
+    }
+}
+
+.arrow-scroll--right {
+    margin-right: 25px;
+
+    & .arrow-scroll__img {
+    transform: rotate(-90deg) translate(0%, -50%);
+    }
+
+    @include phones {
+        right: 2%;
+        margin-right: 0;
+    }
+}

@@ -1,0 +1,39 @@
+.team {
+    position: relative;
+    background-color: #545454;
+}
+
+.team__background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.team__description {
+    padding: rem(98px) 8.9%;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 49%;
+    height: 100%;
+
+    background-color: #2f3234;
+    opacity: .93;
+
+    @include tablets {
+        width: 100%;
+        text-align: center;
+        padding-top: rem(230px);
+    }
+
+    @include phones {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
