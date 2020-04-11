@@ -524,12 +524,18 @@ $(".player__volume-scale").on('click', e => {
 });
 
 $('.player__volume-icon').on('click', e => {
-    if (video.get(0).muted) {
-        video.get(0).muted = false;
+    if (video.get(0).volume === 0) {
+        $('.player__volume-button').css({
+            left: '60%'
+        });
+        video.get(0).volume = 0.6;
     } else {
-        video.get(0).muted = true;
+        $('.player__volume-button').css({
+            left: '0%'
+        });
+        video.get(0).volume = 0;
     }
-})
+});
 
 ////////// map ////////////
 
