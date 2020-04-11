@@ -65,7 +65,7 @@
 
 .accordeon-menu__trigger {
     display: block;
-    width: rem(75px);
+    width: 80px;
     flex-shrink: 0;
     height: 100%;
     position: relative;
@@ -73,12 +73,16 @@
     &:hover .accordeon-menu__title {
         color: #f9b43b;
     }
+
+    @include phones {
+        width: 70px;
+    }
 }
 
 .accordeon-menu__title {
     position: absolute;
     left: 50%;
-    top: 93.85%;
+    top: 96%;
     transform: rotate(-90deg) translateY(-50%);
     transform-origin: 0 0;
 

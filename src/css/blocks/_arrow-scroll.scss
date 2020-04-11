@@ -31,6 +31,7 @@
 
     @include phones {
         left: 2%;
+        margin-left: 0;
     }
 }
 
@@ -43,5 +44,6 @@
 
     @include phones {
         right: 2%;
+        margin-right: 0;
     }
 }

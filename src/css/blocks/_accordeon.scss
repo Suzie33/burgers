@@ -22,6 +22,10 @@
     &--active .accordeon__hidden {
         height: 130px;
         animation: accordeon__hidden .6s linear forwards;
+
+        @include tablets {
+            height: 200px;
+        }
     }
 
     &--active .accordeon__item-title {

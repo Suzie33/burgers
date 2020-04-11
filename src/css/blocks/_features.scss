@@ -6,6 +6,10 @@
     @include tablets {
         padding-bottom: rem(160px);
     }
+
+    @include phones {
+        padding-bottom: 0;
+    }
 }
 
 .features__container {

@@ -14,16 +14,16 @@
     color: #f9b43b;
     margin-bottom: rem(35px);
     
-    &--features {
-        color: #2f3234;
-        text-align: center;
-    }
-
     &--menu {
         position: absolute;
         left: 8.6%;
         top: 14.8%;
         color: #fff;
+
+        @include tablets {
+            left: 3%;
+            top: 9.8%;
+        }
     }
 
     @include tablets {
@@ -42,10 +42,23 @@
             font-size: 55px;
         }
     }
+
+    &--features {
+        color: #2f3234;
+        text-align: center;
+
+        @include phones {
+            margin-bottom: rem(35px);
+        }
+    }
     
     &--process {
         color: #2f3234;
         font-size: 61px;
+
+        @include tablets {
+            margin-bottom: rem(60px);
+        }
 
         @include phones {
             margin-bottom: rem(45px);
@@ -59,6 +72,16 @@
 
         @include tablets {
             text-align: center;
+        }
+    }
+
+    &--order {
+        @include tablets {
+            margin-bottom: rem(58px);
+        }
+
+        @include phones {
+            margin-bottom: 10px;
         }
     }
 }

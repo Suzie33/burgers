@@ -6,6 +6,14 @@ $orange: #e45028;
     background-size: cover;
     color: #fff;
     padding-bottom: rem(20px);
+
+    @include tablets {
+        padding-bottom: rem(160px);
+    }
+
+    @include phones {
+        padding-bottom: 0;
+    }
 }
 
 .order__form {
@@ -43,6 +51,12 @@ $orange: #e45028;
 
     @include tablets {
         width: 100%;
+        margin-right: 0;
+        margin-bottom: rem(23px);
+    }
+
+    @include phones {
+        margin-bottom: rem(15px);
     }
 }
 
@@ -58,6 +72,14 @@ $orange: #e45028;
         @include phones {
             justify-content: center;
         }
+    }
+
+    @include tablets {
+        margin-bottom: rem(23px);
+    }
+
+    @include phones {
+        margin-bottom: rem(15px);
     }
 }
 
@@ -101,9 +123,13 @@ $orange: #e45028;
 
 .order__form-textarea {
     @extend .order__form-input;
-    height: rem(110px);
+    height: 110px;
     resize: none;
     display: block;
+
+    @include phones {
+        height: rem(110px);
+    }
 }
 
 .order__radio {
