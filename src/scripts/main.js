@@ -425,25 +425,25 @@
         performTransition(target);
     });
 
-    // const md = new MobileDetect(window.navigator.userAgent);
-    // const isMobile = md.mobile();
+    const md = new MobileDetect(window.navigator.userAgent);
+    const isMobile = md.mobile();
 
-    // if (isMobile) {
-    //     $(".wrapper__content").swipe({
-    //         swipe: (event, direction) => {
-    //             let scrollDirection;
+    if (isMobile) {
+        $(".wrapper__content").swipe({
+            swipe: (event, direction) => {
+                let scrollDirection;
     
-    //             if (direction === "up") {
-    //                 scrollDirection = "next";
-    //             }
-    //             if (direction === "down") {
-    //                 scrollDirection = "prev";
-    //             }
+                if (direction === "up") {
+                    scrollDirection = "next";
+                }
+                if (direction === "down") {
+                    scrollDirection = "prev";
+                }
     
-    //             scrollSection(scrollDirection);
-    //         }
-    //     })
-    // }
+                scrollSection(scrollDirection);
+            }
+        })
+    }
     
 })();
 
