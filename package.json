@@ -42,7 +42,8 @@
     "jquery": "^3.4.1",
     "jquery-touchswipe": "^1.6.19",
     "mobile-detect": "^1.4.4",
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
+    "sass": "^1.26.9"
   },
   "browserslist": [
     "last 2 versions"
